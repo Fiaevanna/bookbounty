@@ -1,17 +1,19 @@
 :root {
-  --primary: #fafffb;
+  --Primary: #fafffb;
   --Secondary: #90A9A4;
   --Accent: #2F3138;
   --HeaderTextColor: #455C59;
   --Footer: #AAB8B3;
   --Button: #3A4B49;
-  --inputfild: #fafffb;
+  --Inputfild: #fafffb;
+
 }
 
 body {
   background-color: var(--primary);
+  margin: unset;
 }
 
 p{
   margin: unset;
-}
+}   
