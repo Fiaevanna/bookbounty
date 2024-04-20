@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@/components/Button";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
@@ -16,7 +17,6 @@ export default function Home(props) {
         <link rel="icon" href="/landingpage.png" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-   
         <div className={styles.landingPageContainerOne}>
           <div className={styles.headerTextContainer}>
             <div className={styles.welcome}>
@@ -52,7 +52,11 @@ export default function Home(props) {
             </p>
 
             <div className={styles.btnContainer}>
-              <Button text="GET STARTED" className={styles.homePBtn} />
+              <Button
+                to="/login"
+                text="GET STARTED"
+                className={styles.homePBtn}
+              />
             </div>
           </article>
         </div>
@@ -60,11 +64,6 @@ export default function Home(props) {
     </>
   );
 }
-
-
-
-
-
 
 /*
 Kör denna funktionen först men enbart på servern 
