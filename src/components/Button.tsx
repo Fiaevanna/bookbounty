@@ -26,6 +26,7 @@ export const Button = ({ text, className, to, ...buttonProps }: Props) => {
 };
 
 /* 
+
 Här skapa jag en Button component som tar emot props som är typade, 
 jag tar även emot inbyggda props för en Button, via componentPropsWithoutRef
 för att enkelt kunna hantera events, klassnamn, styling, länkar osv

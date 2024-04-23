@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 import type { AppProps } from "next/app";
 import { Balthazar } from "next/font/google";
 import { Adamina } from "next/font/google";
@@ -17,7 +18,10 @@ export default function App({ Component, pageProps }: AppProps) {
           --btn-font: ${libreB.style.fontFamily};
         }
       `}</style>
+      <ClerkProvider>
       <Component {...pageProps} />
+      </ClerkProvider>
+      
     </>
   );
 }

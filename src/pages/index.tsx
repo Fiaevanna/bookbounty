@@ -5,9 +5,7 @@ import { Button } from "@/components/Button";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home(props) {
-  console.log("Props", props);
-
+export default function Home() {
   return (
     <>
       <Head>
