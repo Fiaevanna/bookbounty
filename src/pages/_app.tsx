@@ -4,6 +4,18 @@ import type { AppProps } from "next/app";
 import { Balthazar } from "next/font/google";
 import { Adamina } from "next/font/google";
 import { Libre_Bodoni } from "next/font/google";
+
+const localization = {
+  formButtonPrimary: 'NEXT',
+  signUp: {
+    start: {
+      title: 'CREATE ACCOUNT',
+      subtitle: '',
+      }
+
+  }
+};
+
 const balthazar = Balthazar({ subsets: ["latin"], weight: ["400"] });
 const adamina = Adamina({ subsets: ["latin"], weight: ["400"] });
 const libreB = Libre_Bodoni({ subsets: ["latin"], weight: ["400"] });
@@ -18,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
           --btn-font: ${libreB.style.fontFamily};
         }
       `}</style>
-      <ClerkProvider>
+      <ClerkProvider localization={localization}>
       <Component {...pageProps} />
       </ClerkProvider>
       
