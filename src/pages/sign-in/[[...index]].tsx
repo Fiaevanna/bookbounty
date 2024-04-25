@@ -1,10 +1,10 @@
-import { SignUp } from "@clerk/nextjs";
-import styles from "./sign-up.module.css";
+import { SignIn } from "@clerk/nextjs";
+import styles from "./sign-in.module.css";
 
 export default function Page() {
   return (
-    <SignUp
-      path="/sign-up"
+    <SignIn
+      path="/sign-in"
       appearance={{
         elements: {
           formButtonPrimary: styles.formButtonPrimary,
@@ -16,10 +16,9 @@ export default function Page() {
           buttonArrowIcon: styles.buttonArrowIcon,
           formFieldInput: styles.formFieldInput,
           formFieldLabel: styles.formFieldLabel,
+          
         },
       }}
     />
   );
 }
-
-

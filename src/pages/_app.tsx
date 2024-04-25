@@ -5,15 +5,21 @@ import { Balthazar } from "next/font/google";
 import { Adamina } from "next/font/google";
 import { Libre_Bodoni } from "next/font/google";
 
+
 const localization = {
-  formButtonPrimary: 'NEXT',
+  formButtonPrimary: "CONTINUE",
   signUp: {
     start: {
-      title: 'CREATE ACCOUNT',
-      subtitle: '',
-      }
-
-  }
+      title: "CREATE ACCOUNT",
+      subtitle: "",
+    },
+  },
+  signIn: {
+    start: {
+      title: "LOGIN",
+      subtitle: "",
+    },
+  },
 };
 
 const balthazar = Balthazar({ subsets: ["latin"], weight: ["400"] });
@@ -24,16 +30,15 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <style jsx global>{`
         :root {
-          --special-font: ${balthazar.style.fontFamily}; 
-          --welcome-font: ${adamina.style.fontFamily}; 
+          --special-font: ${balthazar.style.fontFamily};
+          --welcome-font: ${adamina.style.fontFamily};
           --primary-font: ${balthazar.style.fontFamily};
           --btn-font: ${libreB.style.fontFamily};
         }
       `}</style>
       <ClerkProvider localization={localization}>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
       </ClerkProvider>
-      
     </>
   );
 }

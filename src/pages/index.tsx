@@ -51,7 +51,7 @@ export default function Home() {
 
             <div className={styles.btnContainer}>
               <Button
-                to="/login"
+                to="/sign-in"
                 text="GET STARTED"
                 className={styles.homePBtn}
               />
