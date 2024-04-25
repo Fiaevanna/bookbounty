@@ -12,12 +12,16 @@ const localization = {
     start: {
       title: "CREATE ACCOUNT",
       subtitle: "",
+      actionLink:"",
+      actionText: "",
     },
   },
   signIn: {
     start: {
       title: "LOGIN",
       subtitle: "",
+      actionLink:"",
+      actionText:"",
     },
   },
 };

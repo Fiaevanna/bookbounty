@@ -1,5 +1,6 @@
 import { Button } from "@/components/Button";
 import styles from "@/styles/ShipmentDetails.module.css";
+import Link from "next/link";
 
 const ShipmentDetails = () => {
   return (
@@ -7,14 +8,16 @@ const ShipmentDetails = () => {
       <div className={styles.shipmentCard}>
         <div className={styles.shipmentContainer}>
           <div className={styles.formCardContainer}>
-            <div className={styles.headerText}>
+            <header className={styles.headerText}>
               <p>SHIPMENT DETAILS</p>
-            </div>
-            <div className={styles.main}>
+            </header>
+            <main className={styles.main}>
               <div className={styles.form}>
                 <form>
                   <div className={styles.formFieldLabelRow}>
-                    <label htmlFor="address" className={styles.labelText}>Address</label>
+                    <label htmlFor="address" className={styles.labelText}>
+                      Address
+                    </label>
                   </div>
                   <input
                     className={styles.inputField}
@@ -25,7 +28,9 @@ const ShipmentDetails = () => {
                 </form>
                 <form>
                   <div className={styles.formFieldLabelRow}>
-                    <label htmlFor="postalCode" className={styles.labelText}>Postal code</label>
+                    <label htmlFor="postalCode" className={styles.labelText}>
+                      Postal code
+                    </label>
                   </div>
                   <input
                     className={styles.inputField}
@@ -36,7 +41,9 @@ const ShipmentDetails = () => {
                 </form>
                 <form>
                   <div className={styles.formFieldLabelRow}>
-                    <label htmlFor="city" className={styles.labelText}>City</label>
+                    <label htmlFor="city" className={styles.labelText}>
+                      City
+                    </label>
                   </div>
                   <input
                     className={styles.inputField}
@@ -47,7 +54,9 @@ const ShipmentDetails = () => {
                 </form>
                 <form>
                   <div className={styles.formFieldLabelRow}>
-                    <label htmlFor="phone" className={styles.labelText}>Phone</label>
+                    <label htmlFor="phone" className={styles.labelText}>
+                      Phone
+                    </label>
                   </div>
                   <input
                     className={styles.inputField}
@@ -56,13 +65,21 @@ const ShipmentDetails = () => {
                     maxLength={10}
                   />
                 </form>
-              <div>  <Button
-                  to="/sign-in"
-                  text="CREATE ACCOUNT"
-                  className={styles.shipDetailsBtn}
-                /></div>
+                <div className={styles.link}>
+                  <span className={styles.span}>Already have an accoont?</span>
+                 
+                    <span ><Link className={styles.linkText} href="/sign-in">Sign in </Link></span>
+                 
+                </div>
+                <div>
+                  <Button
+                    to="/sign-in"
+                    text="CREATE ACCOUNT"
+                    className={styles.shipDetailsBtn}
+                  />
+                </div>
               </div>
-            </div>
+            </main>
           </div>
         </div>
       </div>
