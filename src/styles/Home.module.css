@@ -36,7 +36,7 @@
 .imgCtaContent {
   display: flex;
   margin-top: 50px;
-  justify-content: end;
+  justify-content: flex-end;
   
 }
 

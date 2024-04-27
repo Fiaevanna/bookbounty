@@ -6,7 +6,12 @@
   --Footer: #AAB8B3;
   --Button: #3A4B49;
   --Inputfild: #fafffb;
-
+  --spacing-base: 5px;
+  --spacing-xs: calc(var(--spacing-base) * 1);
+  --spacing-sm: calc(var(--spacing-base) * 2);
+  --spacing-md: calc(var(--spacing-base) * 3);
+  --spacing-lg: calc(var(--spacing-base) * 4);
+  --spacing-xl: calc(var(--spacing-base) * 5);
 }
 
 body {
@@ -17,3 +22,5 @@ body {
 p{
   margin: unset;
 }   
+
+/* Created varibles for spacing and color */

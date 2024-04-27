@@ -6,6 +6,8 @@
   background-color: var(--Primary);
 }
 
+/* på shipmentcard sätt in nya appshell componenten istället och ta bort padding */
+
 .shipmentContainer {
   width: 100%;
 }
@@ -50,9 +52,10 @@
 .inputField {
   width: 310px;
   box-sizing: border-box;
-  padding: 9px;
+  padding: var(--spacing-sm);
   border-radius: 7px;
   border: 1px solid var(--HeaderTextColor);
+  margin-bottom: 16px;
 }
 
 .shipDetailsBtn {

@@ -1,0 +1,16 @@
+.parentWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    
+} 
+.headerWrapper{
+    padding: var(--spacing-md)
+}
+.mainWrapper{
+    padding: var(--spacing-md)
+}
+.navWrapper{
+
+}

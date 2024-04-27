@@ -1,6 +1,6 @@
 import { Button } from "@/components/Button";
 import styles from "@/styles/ShipmentDetails.module.css";
-import Link from "next/link";
+
 
 const ShipmentDetails = () => {
   return (
@@ -25,8 +25,6 @@ const ShipmentDetails = () => {
                     name="address"
                     maxLength={15}
                   />
-                </form>
-                <form>
                   <div className={styles.formFieldLabelRow}>
                     <label htmlFor="postalCode" className={styles.labelText}>
                       Postal code
@@ -38,8 +36,6 @@ const ShipmentDetails = () => {
                     name="postalCode"
                     maxLength={5}
                   />
-                </form>
-                <form>
                   <div className={styles.formFieldLabelRow}>
                     <label htmlFor="city" className={styles.labelText}>
                       City
@@ -51,8 +47,6 @@ const ShipmentDetails = () => {
                     name="city"
                     maxLength={15}
                   />
-                </form>
-                <form>
                   <div className={styles.formFieldLabelRow}>
                     <label htmlFor="phone" className={styles.labelText}>
                       Phone
@@ -64,20 +58,14 @@ const ShipmentDetails = () => {
                     name="phone"
                     maxLength={10}
                   />
+                  <div>
+                    <Button
+                      to="/sign-in"
+                      text="CREATE ACCOUNT"
+                      className={styles.shipDetailsBtn}
+                    />
+                  </div>
                 </form>
-                <div className={styles.link}>
-                  <span className={styles.span}>Already have an accoont?</span>
-                 
-                    <span ><Link className={styles.linkText} href="/sign-in">Sign in </Link></span>
-                 
-                </div>
-                <div>
-                  <Button
-                    to="/sign-in"
-                    text="CREATE ACCOUNT"
-                    className={styles.shipDetailsBtn}
-                  />
-                </div>
               </div>
             </main>
           </div>
