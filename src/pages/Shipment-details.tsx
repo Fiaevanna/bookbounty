@@ -77,10 +77,4 @@ const ShipmentDetails = () => {
 
 export default ShipmentDetails;
 
-/*  <div className={styles.shipmentContainer}>
-      <p className={styles.headerText}>SHIPMENT DETAILS</p>
-      <div className={styles.form}>
-        
-      </div>
-     
-    </div> */
+

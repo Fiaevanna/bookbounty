@@ -1,0 +1,43 @@
+.parentWrapper {
+  margin-top: var(--spacing-xxl);
+}
+
+.wrapperBookTextContent {
+  margin-top: 5px;
+}
+
+.img {
+  position: relative;
+  width: 113px;
+  height: 169px;
+  display: flex;
+}
+
+.userName {
+  color: var(--HeaderTextColor);
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.price {
+  font-size: 13px;
+  font-family: var(--price-font);
+  margin-bottom: 2px;
+}
+
+.bookTitle {
+  font-size: 13px;
+  color: var(--Accsent);
+  font-family: var(--special-font);
+}
+
+.heartCard{
+    display: flex;
+    
+}
+.heartAndUserNameWrapper {
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    left: 110px;
+}

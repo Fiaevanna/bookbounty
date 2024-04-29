@@ -12,6 +12,7 @@
   --spacing-md: calc(var(--spacing-base) * 3);
   --spacing-lg: calc(var(--spacing-base) * 4);
   --spacing-xl: calc(var(--spacing-base) * 5);
+  --spacing-xxl: calc(var(--spacing-base) * 10);
 }
 
 body {
