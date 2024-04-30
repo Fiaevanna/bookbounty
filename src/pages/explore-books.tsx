@@ -3,8 +3,44 @@ import styles from "@/styles/ExploreBooks.module.css";
 import AppShell from "@/components/AppShell";
 import Image from "next/image";
 import InputField from "@/components/InputField";
-import { Heart, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import BookLayout from "@/components/BookLayout";
+
+const books = [
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Things fall apart",
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Days of sadness",
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+    
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+    
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+    
+  },
+];
 
 const ExploreBooks = () => {
   return (
@@ -22,14 +58,19 @@ const ExploreBooks = () => {
 
         <InputField rightIcon={<Search className={styles.icon} size={15} />} />
         <div className={styles.wrapperBookTextContent}>
-          <BookLayout
-            imgsrc="/bok.png"
-            userName="@Allen"
-            price="50,00 KR"
-            bookTitle="Things fall apart"
-          />
-
-          <Heart className={styles.heartAndUserNameWrapper} size={12} />
+          {books.map((book) => {
+            return (
+              <>
+                <BookLayout
+                  key={book.bookTitle}
+                  imgsrc={book.imgsrc}
+                  userName={book.userName}
+                  price={book.price}
+                  bookTitle={book.bookTitle}
+                />
+              </>
+            );
+          })}
         </div>
       </AppShell>
     </>
@@ -37,21 +78,3 @@ const ExploreBooks = () => {
 };
 
 export default ExploreBooks;
-
-/* 
-
-const bookContent = ({imgsrc, userName, price, bookTitle}) =>{
-// loopa igenom alla böcker och hämta bild,boknamn,pris och användarid username
-och retunera propsen 
-  return(
-    <>
-    
-    
-    </>
-  )
-}
-
-
- 
-
-*/
