@@ -7,9 +7,12 @@
 } 
 .headerWrapper{
     padding: var(--spacing-md)
+
 }
 .mainWrapper{
-    padding: var(--spacing-md)
+    padding: var(--spacing-md);
+    height: 100%;
+    overflow-y: scroll;
 }
 .navWrapper{
 

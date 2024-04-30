@@ -14,32 +14,72 @@ const books = [
     bookTitle: "Things fall apart",
   },
   {
-    imgsrc: "/bok.png",
+    imgsrc: "/bok2.png",
     userName: "@Allen",
     price: "50,00 KR",
     bookTitle: "Days of sadness",
   },
   {
-    imgsrc: "/bok.png",
+    imgsrc: "/bok3.png",
     userName: "@Allen",
     price: "50,00 KR",
     bookTitle: "Bitches aint shit we don't love them hoes",
-    
+  },
+  {
+    imgsrc: "/bok4.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok5.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok6.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
   },
   {
     imgsrc: "/bok.png",
     userName: "@Allen",
     price: "50,00 KR",
-    bookTitle: "Bitches aint shit we don't love them hoes",
-    
+    bookTitle: "Things fall apart",
   },
   {
-    imgsrc: "/bok.png",
+    imgsrc: "/bok2.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Days of sadness",
+  },
+  {
+    imgsrc: "/bok3.png",
     userName: "@Allen",
     price: "50,00 KR",
     bookTitle: "Bitches aint shit we don't love them hoes",
-    
   },
+  {
+    imgsrc: "/bok4.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok5.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok6.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  
 ];
 
 const ExploreBooks = () => {
