@@ -2,12 +2,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
- 
 }
 
 .landingPageContainerOne {
-  padding: 20px 20px 20px 0px;
-
+  padding: 10px 20px 50px 20px;
 }
 
 .headerText {
@@ -18,31 +16,36 @@
 .headerText {
   font-family: var(--special-font);
   color: var(--HeaderTextColor);
-  font-size: 54px;
+  font-size: 65px;
   display: flex;
   justify-content: center;
   margin: unset;
+  
 }
 
 .welcome {
   font-family: var(--welcome-font);
   display: flex;
   justify-content: center;
-  font-size: 24px;
+  font-size: 27px;
   color: var(--Accent);
-  padding-top: 50px;
+  padding-top: 60px;
+  
 }
 
 .imgCtaContent {
   display: flex;
   margin-top: 50px;
   justify-content: flex-end;
-  
 }
 
 .img {
-  margin-top: 70px;
+  margin-top: 58px;
   position: absolute;
+  width: 160px;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: -26px 18px 6px 0px rgba(0, 0, 0, 0.158);
 }
 
 .cta {
@@ -50,7 +53,6 @@
   color: var(--HeaderTextColor);
   font-size: 22px;
   margin-top: 50px;
-
 }
 .footerTextContent {
   display: flex;
@@ -59,25 +61,22 @@
   padding: 20px;
   font-family: var(--primary-font);
 }
-.footerTextContainer{
+.footerTextContainer {
   margin-top: 130px;
   width: 100%;
 }
-.footerText{
+.footerText {
   margin-top: 10px;
   color: var(--Accent);
   font-size: 20px;
-  
 }
 
-.btnContainer{
+.btnContainer {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.homePBtn{
-
+.homePBtn {
   width: 200px;
-
 }

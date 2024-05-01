@@ -79,6 +79,222 @@ const books = [
     price: "50,00 KR",
     bookTitle: "Bitches aint shit we don't love them hoes",
   },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Things fall apart",
+  },
+  {
+    imgsrc: "/bok2.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Days of sadness",
+  },
+  {
+    imgsrc: "/bok3.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok4.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok5.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok6.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Things fall apart",
+  },
+  {
+    imgsrc: "/bok2.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Days of sadness",
+  },
+  {
+    imgsrc: "/bok3.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok4.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok5.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok6.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Things fall apart",
+  },
+  {
+    imgsrc: "/bok2.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Days of sadness",
+  },
+  {
+    imgsrc: "/bok3.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok4.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok5.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok6.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Things fall apart",
+  },
+  {
+    imgsrc: "/bok2.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Days of sadness",
+  },
+  {
+    imgsrc: "/bok3.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok4.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok5.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok6.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Things fall apart",
+  },
+  {
+    imgsrc: "/bok2.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Days of sadness",
+  },
+  {
+    imgsrc: "/bok3.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok4.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok5.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok6.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Things fall apart",
+  },
+  {
+    imgsrc: "/bok2.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Days of sadness",
+  },
+  {
+    imgsrc: "/bok3.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok4.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok5.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
+  {
+    imgsrc: "/bok6.png",
+    userName: "@Allen",
+    price: "50,00 KR",
+    bookTitle: "Bitches aint shit we don't love them hoes",
+  },
   
 ];
 
@@ -90,7 +306,7 @@ const ExploreBooks = () => {
       >
         <div className={styles.img}>
           <Image
-            src="/explorebookspage.png"
+            src="/exploreBImg.jpg"
             fill
             alt="munks reading books"
           ></Image>

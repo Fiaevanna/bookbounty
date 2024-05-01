@@ -20,10 +20,12 @@ const AppShell = ({ title, children }: Props) => {
   return (
     <div className={styles.parentWrapper}>
       <header className={styles.headerWrapper}>
-        <div onClick={() => scrollToTop()} >{title}</div>
+        <div onClick={() => scrollToTop()}>{title}</div>
       </header>
-      <main ref={divRef} className={styles.mainWrapper}>{children}</main>
-      <nav className={styles.navWrapper}>
+      <main ref={divRef} className={styles.mainWrapper}>
+        {children}
+      </main>
+      <nav className={styles.navWrapper}>  
         <Nav />
       </nav>
     </div>

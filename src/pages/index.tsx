@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <img
             className={styles.img}
-            src="/landingpage.png"
+            src="/cover.jpg"
             alt=" painting of girl reading book"
           />
           <div className={styles.imgCtaContent}>

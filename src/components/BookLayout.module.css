@@ -1,5 +1,5 @@
 .parentWrapper {
-  margin-top: var(--spacing-xxl);
+  margin-top: var(--spacing-m);
   width: calc((100% - var(--spacing-md) * 2) / 3);
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 .imgWrapper {
   position: relative;
   width: 100%;
-  height: 169px;
+  height: 166px;
   display: flex;
 }
 
