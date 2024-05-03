@@ -1,13 +1,11 @@
 import { SignUp } from "@clerk/nextjs";
 import styles from "./sign-up.module.css";
 import Link from "next/link";
-import { Button } from "@/components/Button";
-
+/* Här ska du redirect till shipment details  */
 export default function Page() {
   return (
     <div className={styles.shipmentCard}>
       <SignUp
-        
         path="/sign-up"
         appearance={{
           elements: {
@@ -34,7 +32,6 @@ export default function Page() {
             </Link>
           </span>
         </div>
-
       </div>
     </div>
   );

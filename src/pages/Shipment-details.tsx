@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import styles from "@/styles/ShipmentDetails.module.css";
 
+/* Här ska logik in för att spara all info från input till settings/profilen  */
 
 const ShipmentDetails = () => {
   return (
