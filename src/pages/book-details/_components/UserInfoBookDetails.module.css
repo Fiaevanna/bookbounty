@@ -1,0 +1,28 @@
+.userParent {
+}
+
+.contentWrapper {
+}
+
+.imgRatingUsernameWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.profileImgWrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profileImg {
+  position: absolute;
+}
+
+.userName {
+    
+}
+
+.userDescription {
+  
+}
