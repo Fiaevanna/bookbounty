@@ -1,0 +1,9 @@
+.input{
+display: none;
+}
+
+.star{
+    cursor: pointer;
+    color: #EB9C44;
+    margin-right: 4px;
+}

@@ -1,35 +1,35 @@
 import Image from "next/image";
-import styles from "./UserInfoBookDetails.module.css"
+import styles from "./UserInfoBookDetails.module.css";
+import StarRating from "@/components/StarRating";
 
 const UserInfoBookDetails = () => {
   return (
     <>
-      <div className={styles.userParent}>
-        <div className={styles.contentWrapper}>
-          <div className={styles.imgRatingUsernameWrapper}>
-            <div className={styles.profileImgWrapper}>
-              <Image
-                className={styles.profileImg}
-                src="/jojo.jpg"
-                fill
-                alt="profile"
-              ></Image>
-            </div>
-            <div className={styles.userName}>
-              <p>@Allen</p>
-            </div>
-            <div className={styles.rating}>
-              <p>rating</p>
-            </div>
-          </div>
-          <div className={styles.userDescription}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-              aliquam impedit labore velit ratione repellendus magni in, autem
-              laborum illum incidunt suscipit, iusto, harum veritatis obcaecati
-              tenetur saepe tempora dolor!
-            </p>
-          </div>
+      <div className={styles.profileParent}>
+       <div className={styles.card}>
+       <div className={styles.imgWrapper}>
+          <Image
+            className={styles.profileImg}
+            src="/jojo.jpg"
+            fill
+            alt="profile"
+          ></Image>
+        </div>
+        <div className={styles.contentLayout}>
+          <p className={styles.userName}>@Allen's book review</p>
+        </div>
+       </div>
+      </div>
+      <div className={styles.userDescription}>
+        <p className={styles.descriptionText}>
+          I rate the book 8/10. I thoroughly enjoyed the story and believe
+          future readers will too. Through Okonkwo's journey, the novel provides
+          deep insights into the vulnerability of identity and the repercussions
+          of resisting inevitable change. The book is in great condition!
+        </p>
+        <div className={styles.star}>
+        <p className={styles.starLabel}>Rating:</p>
+          <StarRating />
         </div>
       </div>
     </>

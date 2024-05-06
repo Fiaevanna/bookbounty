@@ -1,17 +1,12 @@
-.userParent {
-}
-
-.contentWrapper {
-}
-
-.imgRatingUsernameWrapper {
+.profileParent {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
 }
-.profileImgWrapper {
+.imgWrapper {
   position: relative;
-  width: 90px;
-  height: 90px;
+  width: 115px;
+  height: 115px;
   overflow: hidden;
   border-radius: 50%;
 }
@@ -19,10 +14,32 @@
   position: absolute;
 }
 
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .userName {
-    
+  margin-left: 9px;
+  color: var(--HeaderTextColor);
+  font-family: var(--special-font);
+  font-size: 19px;
+  margin-top: 10px;
 }
 
 .userDescription {
-  
+  margin-top: 20px;
+}
+.descriptionText {
+  font-family: var(--special-font);
+  font-size: 15px;
+}
+
+.starLabel {
+  font-family: var(--special-font);
+  color: var(--HeaderTextColor);
+  margin-bottom: 5px;
+}
+.star {
+  margin-top: 15px;
 }
