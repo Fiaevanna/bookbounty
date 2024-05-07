@@ -12,7 +12,7 @@ const localization = {
     start: {
       title: "CREATE ACCOUNT",
       subtitle: "",
-      actionLink:"",
+      actionLink: "",
       actionText: "",
     },
   },
@@ -20,8 +20,8 @@ const localization = {
     start: {
       title: "LOGIN",
       subtitle: "",
-      actionLink:"",
-      actionText:"",
+      actionLink: "",
+      actionText: "",
     },
   },
 };
@@ -29,7 +29,7 @@ const localization = {
 const balthazar = Balthazar({ subsets: ["latin"], weight: ["400"] });
 const adamina = Adamina({ subsets: ["latin"], weight: ["400"] });
 const libreB = Libre_Bodoni({ subsets: ["latin"], weight: ["400"] });
-const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
+const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>

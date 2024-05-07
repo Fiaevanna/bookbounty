@@ -25,6 +25,8 @@ export const Button = ({ text, className, to, ...buttonProps }: Props) => {
   return rootButton;
 };
 
+export default Button;
+
 /* 
 
 Här skapa jag en Button component som tar emot props som är typade, 

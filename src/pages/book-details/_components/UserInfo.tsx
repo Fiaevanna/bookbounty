@@ -2,23 +2,23 @@ import Image from "next/image";
 import styles from "./UserInfoBookDetails.module.css";
 import StarRating from "@/components/StarRating";
 
-const UserInfoBookDetails = () => {
+const UserInfo = () => {
   return (
     <>
       <div className={styles.profileParent}>
-       <div className={styles.card}>
-       <div className={styles.imgWrapper}>
-          <Image
-            className={styles.profileImg}
-            src="/jojo.jpg"
-            fill
-            alt="profile"
-          ></Image>
+        <div className={styles.card}>
+          <div className={styles.imgWrapper}>
+            <Image
+              className={styles.profileImg}
+              src="/jojo.jpg"
+              fill
+              alt="profile"
+            ></Image>
+          </div>
+          <div className={styles.contentLayout}>
+            <p className={styles.userName}>@Allen's book review</p>
+          </div>
         </div>
-        <div className={styles.contentLayout}>
-          <p className={styles.userName}>@Allen's book review</p>
-        </div>
-       </div>
       </div>
       <div className={styles.userDescription}>
         <p className={styles.descriptionText}>
@@ -28,12 +28,13 @@ const UserInfoBookDetails = () => {
           of resisting inevitable change. The book is in great condition!
         </p>
         <div className={styles.star}>
-        <p className={styles.starLabel}>Rating:</p>
+          <p className={styles.starLabel}>Book rating:</p>
           <StarRating />
         </div>
       </div>
+      <div className={styles.line}></div>
     </>
   );
 };
 
-export default UserInfoBookDetails;
+export default UserInfo;
