@@ -8,7 +8,7 @@ const HeartIcon = () => {
         <>
             <Heart
             color="var(--HeaderTextColor)"
-            size={20}
+            size={17}
             fill={filled ? "var(--HeaderTextColor)" : "none"}
             onClick={() => setFilled((prevState) => !prevState)}
           />
@@ -16,4 +16,4 @@ const HeartIcon = () => {
     )
 }
 
-export default HeartIcon;
+export default HeartIcon; 

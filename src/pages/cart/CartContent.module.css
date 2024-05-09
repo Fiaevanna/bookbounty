@@ -1,0 +1,88 @@
+.layout {
+  margin-top: 20px;
+  position: relative;
+}
+
+.imgWrapper {
+  position: absolute;
+  width: 100px;
+  height: 150px;
+}
+
+
+.textContentParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--Accent);
+  font-family: var(----special-font);
+}
+
+
+.textWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    padding-right: 15px;
+}
+
+.title{
+    text-decoration: underline;
+}
+
+
+.iconWrapper{
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+
+.line{
+    background-color: var(--Line);
+    width: 100%;
+    height: 1px;
+    opacity: 24%;
+    margin-top: 35px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.trash2 {
+  color: var(--HeaderTextColor);
+}
+
+.totalSum {
+  border: 1px solid var(--Footer);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 400px;
+  color: var(--Accent);
+  font-family: var(----special-font);
+  padding: 20px;
+}
+
+.sumTitleWrapper {
+  font-size: 20px;
+}
+
+.price {
+  font-family: var(--price-font);
+  color: black;
+  font-size: 18px;
+}
