@@ -9,9 +9,7 @@ type Props = {
   title: string;
   author: string;
   price: string;
-  sumTitle: string;
-  totalSum: string;
-  shipping: string;
+ 
 };
 
 const CartContent = ({
@@ -19,9 +17,6 @@ const CartContent = ({
   title,
   author,
   price,
-  sumTitle,
-  shipping,
-  totalSum,
 }: Props) => {
   return (
     <>
@@ -45,24 +40,7 @@ const CartContent = ({
         </div>
         <div className={styles.line}></div>
       </div>
-      <div className={styles.totalSum}>
-        <div className={styles.sumTitleWrapper}>
-          <p className={sumTitle}>{sumTitle}</p>
-        </div>
-        <div className={styles.shippingWrapper}>
-          <p className={shipping}>{shipping}</p>
-        </div>
-        <div className={styles.totalSumWrapper}>
-          <p className={totalSum}>{totalSum}</p>
-        </div>
-        <Button
-          to="/checkout"
-          text="GO TO CHECKOUT"
-          className={styles.homePBtn}
-        >
-          GO TO CHECKOUT
-        </Button>
-      </div>
+   
     </>
   );
 };

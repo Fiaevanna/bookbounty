@@ -1,7 +1,42 @@
-.line{
+.line {
   background-color: var(--Line);
   width: 100%;
   height: 1px;
   opacity: 24%;
   margin-bottom: 10px;
+}
+
+.totalSumParent {
+  border: 1px solid var(--Footer);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: var(--Accent);
+  font-family: var(----special-font);
+  padding: var(--spacing-sm);
+  margin-top: 10px;
+}
+
+.sumTitleWrapper {
+  font-size: 20px;
+  
+}
+
+.shippingParent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.shippingWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.totalSumWrapper {
+  display: flex;
+  justify-content: space-between;
 }
