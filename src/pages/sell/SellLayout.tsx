@@ -12,7 +12,7 @@ const SellLayout = () => {
           condition below.
         </p>
         <textarea className={styles.description}></textarea>
-      
+
         <div className={styles.ratingParent}>
           <p className={styles.rating}>My book rating:</p>
           <StarRating />
@@ -33,7 +33,7 @@ const SellLayout = () => {
         </div>
         <div className={styles.priceWrapper}>
           <p className={styles.price}>Price:</p>
-          <InputField type="text" className={styles.input} />
+          <InputField type="number" className={styles.input} />
         </div>
 
         <div className={styles.authorWrapper}>
@@ -54,3 +54,5 @@ export default SellLayout;
 
 /*   discription   Här vill du sen sätta någon funktion på inputfältets 
  value till this.value.toUpperCase() */
+
+ /* se till att stjärnorna sätts och sparas  */

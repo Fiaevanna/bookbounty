@@ -29,9 +29,8 @@
 }
 
 .input {
-  outline: 0;
-  border-width: 0 0 1px;
   border-color: var(--Footer);
+  border-radius: 4px;
 }
 
 .btnContainer {
