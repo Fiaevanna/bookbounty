@@ -34,3 +34,8 @@
   opacity: 34%;
   margin-bottom: 10px;
 }
+
+.link{
+  color: var(--HeaderTextColor);
+  text-decoration: none;
+}
