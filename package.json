@@ -11,6 +11,7 @@
   "dependencies": {
     "@clerk/localizations": "^2.0.0",
     "@clerk/nextjs": "^5.0.1",
+    "@serwist/next": "^9.0.2",
     "lucide-react": "^0.376.0",
     "next": "14.2.2",
     "react": "^18",
@@ -22,6 +23,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
+    "serwist": "^9.0.2",
     "typescript": "^5"
   }
 }
