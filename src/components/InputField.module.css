@@ -1,12 +1,11 @@
-.searchBar {
+.rootInputField {
   width: 100%;
   box-sizing: border-box;
-  border-radius: 12px;
   padding: 10px;
-  border: 1px solid var(--HeaderTextColor);
+  border: 1px solid var(--Footer);
   padding-right: 35px;
   outline: none;
-
+  color: var(--HeaderTextColor);
 }
 
 .parentWrapper {

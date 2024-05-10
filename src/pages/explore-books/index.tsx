@@ -1,5 +1,5 @@
 import PageTitle from "@/components/PageTitle";
-import styles from "@/styles/ExploreBooks.module.css";
+import styles from "@/styles/exploreBooks.module.css";
 import AppShell from "@/components/AppShell";
 import Image from "next/image";
 import InputField from "@/components/InputField";
@@ -295,7 +295,6 @@ const books = [
     price: "50,00 KR",
     bookTitle: "Bitches aint shit we don't love them hoes",
   },
-  
 ];
 
 const ExploreBooks = () => {
@@ -305,14 +304,14 @@ const ExploreBooks = () => {
         title={<PageTitle className={styles.title} text="EXPLORE BOOKS" />}
       >
         <div className={styles.img}>
-          <Image
-            src="/exploreBImg.jpg"
-            fill
-            alt="munks reading books"
-          ></Image>
+          <Image src="/exploreBImg.jpg" fill alt="munks reading books"></Image>
         </div>
 
-        <InputField rightIcon={<Search className={styles.icon} size={15} />} />
+        <InputField
+          className={styles.searchInput}
+          placeholder="Search..."
+          rightIcon={<Search className={styles.icon} size={15} />}
+        />
         <div className={styles.wrapperBookTextContent}>
           {books.map((book) => {
             return (

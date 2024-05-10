@@ -1,0 +1,21 @@
+.parent{
+
+}
+
+.contentWrapper{
+font-family: var(--special-font);
+color: var(--Accent);
+margin-bottom: 60px;
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+
+.fullNameWrapper{
+    display: flex;
+    gap: 5px;
+}
+.address{
+    display: flex;
+    gap: 5px;
+}

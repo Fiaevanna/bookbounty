@@ -1,5 +1,7 @@
+
 import { Button } from "@/components/Button";
-import styles from "@/styles/ShipmentDetails.module.css";
+import InputField from "@/components/InputField";
+import styles from "@/styles/shipmentDetails.module.css";
 
 /* Här ska logik in för att spara all info från input till settings/profilen  */
 
@@ -16,49 +18,77 @@ const ShipmentDetails = () => {
               <div className={styles.form}>
                 <form>
                   <div className={styles.formFieldLabelRow}>
+                    <label htmlFor="fullName" className={styles.labelText}>
+                      Full name
+                    </label>
+                  </div>
+                  <InputField
+                    className={styles.inputField}
+                    type="text"
+                    name="fullName"
+                    maxLength={15}
+                  />
+
+                  <div className={styles.formFieldLabelRow}>
                     <label htmlFor="address" className={styles.labelText}>
                       Address
                     </label>
                   </div>
-                  <input
+                  <InputField
                     className={styles.inputField}
                     type="text"
                     name="address"
                     maxLength={15}
                   />
+
                   <div className={styles.formFieldLabelRow}>
                     <label htmlFor="postalCode" className={styles.labelText}>
                       Postal code
                     </label>
                   </div>
-                  <input
+                  <InputField
                     className={styles.inputField}
                     type="text"
                     name="postalCode"
                     maxLength={5}
                   />
+
                   <div className={styles.formFieldLabelRow}>
                     <label htmlFor="city" className={styles.labelText}>
                       City
                     </label>
                   </div>
-                  <input
+                  <InputField
                     className={styles.inputField}
                     type="text"
                     name="city"
                     maxLength={15}
                   />
+
+                  <div className={styles.formFieldLabelRow}>
+                    <label htmlFor="country" className={styles.labelText}>
+                      Country
+                    </label>
+                  </div>
+                  <InputField
+                    className={styles.inputField}
+                    type="text"
+                    name="city"
+                    maxLength={15}
+                  />
+
                   <div className={styles.formFieldLabelRow}>
                     <label htmlFor="phone" className={styles.labelText}>
                       Phone
                     </label>
                   </div>
-                  <input
+                  <InputField
                     className={styles.inputField}
                     type="number"
                     name="phone"
                     maxLength={10}
                   />
+
                   <div>
                     <Button
                       to="/sign-in"
@@ -77,5 +107,3 @@ const ShipmentDetails = () => {
 };
 
 export default ShipmentDetails;
-
-

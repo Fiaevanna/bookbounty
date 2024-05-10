@@ -1,0 +1,66 @@
+.imgWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.img {
+  position: absolute;
+}
+
+.line {
+  background-color: var(--Line);
+  width: 100%;
+  height: 1px;
+  opacity: 24%;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.shippingWrapper {
+  margin-top: 30px;
+  font-family: var(--special-font);
+  color: var(--Accent);
+}
+
+.card {
+  display: flex;
+}
+
+.titleAndIcon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoText {
+  font-size: 14px;
+  width: 300px;
+}
+
+.labelText {
+  font-family: var(--special-font);
+  font-size: 14px;
+}
+.layoutForm {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.formFieldLabelRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.inputField {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid var(--Footer) !important;
+  color: var(--HeaderTextColor);
+  
+}
+
+.inputField:focus {
+    background-color: var(--Footer);
+  }

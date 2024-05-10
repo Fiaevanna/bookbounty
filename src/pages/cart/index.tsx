@@ -3,7 +3,9 @@ import PageTitle from "@/components/PageTitle";
 import styles from "./cart.module.css";
 import CartContent from "./CartContent";
 import Button from "@/components/Button";
-import { useEffect, useState } from "react";
+
+
+/* Här ska hantering av trash can hanteras  */
 
 type Book = {
   img: string;
@@ -65,7 +67,7 @@ const Cart = ({ bookCart, shipping, totalSum }: Props) => {
 
 export default Cart;
 
-/* BACKEND  
+/* BACKEND uträkningen sker direkt på backend innan den renderas på clienten 
 https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props
 */
 

@@ -6,7 +6,6 @@
   background-color: var(--Primary);
 }
 
-/* på shipmentcard sätt in nya appshell componenten istället och ta bort padding */
 
 .shipmentContainer {
   width: 100%;
@@ -54,7 +53,7 @@
   box-sizing: border-box;
   padding: var(--spacing-sm);
   border-radius: 7px;
-  border: 1px solid var(--HeaderTextColor);
+  border: 1px solid var(--Footer) !important;
   margin-bottom: 16px;
 }
 
