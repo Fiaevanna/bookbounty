@@ -1,13 +1,14 @@
 import AppShell from "@/components/AppShell";
-import styles from "./Profile.module.css";
-import UserContent from "./UserContent";
 import PageTitle from "@/components/PageTitle";
+import SettingsProfile from "@/components/SettingsProfile";
+import Menu from "./Menu";
 
 const Profile = () => {
   return (
     <>
-      <AppShell  title={<PageTitle text="PROFILE" />}>
-       <UserContent/>
+      <AppShell title={<PageTitle text="PROFILE" />}>
+        <SettingsProfile src="/jojo.jpg" userName="Allen" />
+        <Menu />
       </AppShell>
     </>
   );

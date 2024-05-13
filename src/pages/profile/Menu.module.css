@@ -3,32 +3,6 @@
   color: var(--HeaderTextColor);
 }
 
-.imageWrapper {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.profileImg {
-  position: absolute;
-}
-
-.userName {
-  font-size: 18px;
-  margin-top: 5px;
-  color: var(--HeaderTextColor);
-}
-
-.layout {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
 .menuMyProfile {
   display: flex;
   justify-content: space-between;

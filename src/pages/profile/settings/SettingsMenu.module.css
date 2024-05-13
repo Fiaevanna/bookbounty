@@ -1,0 +1,26 @@
+.parent{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.btnWrapper{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width: 200px;
+    margin-top: 10px;
+}
+
+.labelWrapper{
+
+}
+
+.labelText{
+    font-family: var(--special-font);
+}
+
+.inputField{
+    outline: 0;
+    border-width: 0 0 1px;
+}
