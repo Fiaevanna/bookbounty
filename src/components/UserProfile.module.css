@@ -1,0 +1,53 @@
+.parent {
+  font-family: var(----special-font);
+  color: var(--HeaderTextColor);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profileImg {
+  position: absolute;
+}
+
+.userName {
+  font-size: 18px;
+  margin-top: 5px;
+  color: var(--HeaderTextColor);
+}
+
+.layout {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.menuMyProfile {
+  display: flex;
+  justify-content: space-between;
+}
+.text {
+  font-size: 17px;
+  font-family: var(--btn-font);
+  color: var(--Accent);
+}
+
+.line {
+  background-color: var(--Line);
+  width: 100%;
+  height: 1px;
+  opacity: 34%;
+  margin-top: 10px;
+}
+
+.parent {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}

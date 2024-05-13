@@ -23,7 +23,7 @@ const UserInfo = () => {
       <div className={styles.userDescription}>
         <p className={styles.descriptionText}>
           I rate the book 8/10. I thoroughly enjoyed the story and believe
-          future readers will too. Through Okonkwo's journey, the novel provides
+          future readers will too. Through Okonkwos journey, the novel provides
           deep insights into the vulnerability of identity and the repercussions
           of resisting inevitable change. The book is in great condition!
         </p>
