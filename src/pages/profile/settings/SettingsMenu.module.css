@@ -12,9 +12,7 @@
     margin-top: 10px;
 }
 
-.labelWrapper{
 
-}
 
 .labelText{
     font-family: var(--special-font);
@@ -23,4 +21,9 @@
 .inputField{
     outline: 0;
     border-width: 0 0 1px;
+}
+
+.btnUpdate{
+    margin-top: 16px;
+    margin-bottom: 20px;
 }

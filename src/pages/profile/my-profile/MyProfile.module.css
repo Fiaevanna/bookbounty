@@ -1,0 +1,29 @@
+.wrapperBookTextContent {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+.titleWrapperSale {
+  font-family: var(--btn-font);
+  margin-top: 50px;
+}
+
+.titleWrapperSold {
+  font-family: var(--btn-font);
+  margin-top: 50px;
+}
+.lineSold {
+  background-color: var(--Secondary);
+  width: 100%;
+  height: 5px;
+  opacity: 50%;
+  margin-top: 10px;
+}
+.lineSale {
+  background-color: var(--Secondary);
+  width: 100%;
+  height: 5px;
+  opacity: 50%;
+  margin-top: 10px;
+}
+

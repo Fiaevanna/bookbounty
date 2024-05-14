@@ -22,7 +22,7 @@ const SettingsMenu = () => {
           </label>
           <InputField className={styles.inputField} type="text" />
         </div>
-       
+
         <div className={styles.labelWrapper}>
           <label className={styles.labelText} htmlFor="address">
             Address:
@@ -35,7 +35,7 @@ const SettingsMenu = () => {
           </label>
           <InputField className={styles.inputField} type="number" />
         </div>
-      
+
         <div className={styles.labelWrapper}>
           <label className={styles.labelText} htmlFor="city">
             City:
@@ -52,11 +52,9 @@ const SettingsMenu = () => {
           <label className={styles.labelText} htmlFor="password">
             Password:
           </label>
-          <InputField className={styles.inputField} type="text" />
+          <InputField placeholder="********** " className={styles.inputField} type="text" />
         </div>
-        <Button className={styles.btnUpdate} text="UPDATE">
-          + Profile pitcher
-        </Button>
+        <Button className={styles.btnUpdate} text="UPDATE"></Button>
       </div>
     </>
   );

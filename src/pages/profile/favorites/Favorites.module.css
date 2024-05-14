@@ -1,0 +1,23 @@
+
+.wrapper{
+    display: flex;
+    gap: 10px;
+    color: var(--Accent);
+}
+.title{
+    font-family: var(--btn-font);
+}
+
+.line{
+    background-color: var(--Secondary);
+    width: 100%;
+    height: 5px;
+    opacity: 50%;
+    margin-top: 10px;
+} 
+
+.wrapperBookTextContent {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
