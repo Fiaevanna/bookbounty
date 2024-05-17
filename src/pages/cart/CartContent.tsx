@@ -1,7 +1,7 @@
 import styles from "./CartContent.module.css";
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
-import HeartIcon from "@/components/HeartIcon";
+import HeartIcon from "@/components/Likes";
 
 
 type Props = {

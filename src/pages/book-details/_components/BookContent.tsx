@@ -1,4 +1,4 @@
-import HeartIcon from "@/components/HeartIcon";
+import HeartIcon from "@/components/Likes";
 import styles from "./BookContent.module.css";
 import Image from "next/image";
 

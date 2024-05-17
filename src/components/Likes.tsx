@@ -1,7 +1,7 @@
 import { Heart } from "lucide-react";
 import { useState } from "react";
 
-const HeartIcon = () => {
+const Likes = () => {
     const [filled, setFilled] = useState(false);
 
     return(
@@ -16,4 +16,4 @@ const HeartIcon = () => {
     )
 }
 
-export default HeartIcon; 
+export default Likes; 

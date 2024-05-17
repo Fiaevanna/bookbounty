@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "@/components/BookLayout.module.css";
 import { Heart } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 type Props = {
   imgsrc: string;
@@ -18,22 +19,29 @@ const BookLayout = ({ imgsrc, userName, price, bookTitle }: Props) => {
       <div className={styles.imgWrapper}>
         <Image src={imgsrc} fill alt=""></Image>
       </div>
+      <div className={styles.heartAndUserNameWrapper}>
+        <p>{userName}</p>
+
+        <Heart
+          size={13}
+          fill={filled ? "var(--HeaderTextColor)" : "none"}
+          onClick={() => setFilled((prevState) => !prevState)}
+        />
+      </div>
+
       <div className={styles.wrapperBookTextContent}>
-        <div className={styles.heartAndUserNameWrapper}>
-          <p>{userName}</p>
-
-          <Heart
-            size={13}
-            fill={filled ? "var(--HeaderTextColor)" : "none"}
-            onClick={() => setFilled((prevState) => !prevState)}
-          />
-        </div>
-
         <p className={styles.price}>{price}</p>
         <p className={styles.bookTitle}>{bookTitle}</p>
+      </div>
+      <div className={styles.cartWrapper}>
+        <Link className={styles.link} href={"/cart"}>
+          <p className={styles.bookTitle}>Add to cart</p>
+        </Link>
       </div>
     </div>
   );
 };
 
 export default BookLayout;
+
+/* add to cart, onClick add book to cart and alert with number to nav??  */
