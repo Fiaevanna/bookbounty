@@ -1,5 +1,5 @@
 import { profile } from "console";
-import { sql } from "drizzle-orm";
+import { relations, sql } from "drizzle-orm";
 import { integer, sqliteTable, text, blob } from "drizzle-orm/sqlite-core";
 
 /* sätter upp mina tabels för databas (schema) */
@@ -28,8 +28,7 @@ export const booksTable = sqliteTable("books", {
   sellerUserID: text("sellerUserID")
     .notNull()
     .references(() => usersTable.ID),
-  buyerUserID: text("buyerUserID")
-    .references(() => usersTable.ID),
+  buyerUserID: text("buyerUserID").references(() => usersTable.ID),
   isSold: integer("isSold", { mode: "boolean" }).default(false),
 });
 
@@ -51,19 +50,29 @@ export const cartItemsTable = sqliteTable("cartItems", {
     .references(() => booksTable.ID),
 });
 
+/* Här sätter jag upp relationen mellan user och boken, https://orm.drizzle.team/docs/rqb */
+export const booksRelations = relations(booksTable, ({ one }) => ({
+  seller: one(usersTable, {
+    fields: [booksTable.sellerUserID],
+    references: [usersTable.ID],
+  }),
+  buyer: one(usersTable, {
+    fields: [booksTable.buyerUserID],
+    references: [usersTable.ID],
+  }),
+}));
 
 /* använder drizzles stöd för att kunna typa mina tabels  */
 
 export type InsertUsers = typeof usersTable.$inferInsert;
 export type SelectUsers = typeof usersTable.$inferSelect;
 
-
 export type InsertBooks = typeof booksTable.$inferInsert;
 export type SelectBooks = typeof booksTable.$inferSelect;
+export type SelectBooksWithSeller = SelectBooks & { seller: SelectUsers };
 
 export type InsertLikes = typeof likesTable.$inferInsert;
 export type SelectLikes = typeof likesTable.$inferSelect;
 
 export type InsertCartItems = typeof cartItemsTable.$inferInsert;
 export type SelectCartItems = typeof cartItemsTable.$inferSelect;
-

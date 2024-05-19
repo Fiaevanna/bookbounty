@@ -5,299 +5,15 @@ import Image from "next/image";
 import InputField from "@/components/InputField";
 import { Search } from "lucide-react";
 import BookLayout from "@/components/BookLayout";
+import { db } from "@/db/db";
+import { booksTable, SelectBooks, SelectUsers, SelectBooksWithSeller } from "@/db/schema";
+import { eq, exists, sql } from "drizzle-orm";
 
-const books = [
-  {
-    imgsrc: "/book1984.jpg",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Things fall apart",
-  },
-  {
-    imgsrc: "/bookcrime.jpg",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Days of sadness",
-  },
-  {
-    imgsrc: "/bookgatsby.jpg",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bookhobbit.jpg",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bookrye.jpg",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/booksherlock.jpg",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Things fall apart",
-  },
-  {
-    imgsrc: "/bok2.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Days of sadness",
-  },
-  {
-    imgsrc: "/bok3.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok4.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok5.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok6.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Things fall apart",
-  },
-  {
-    imgsrc: "/bok2.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Days of sadness",
-  },
-  {
-    imgsrc: "/bok3.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok4.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok5.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok6.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Things fall apart",
-  },
-  {
-    imgsrc: "/bok2.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Days of sadness",
-  },
-  {
-    imgsrc: "/bok3.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok4.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok5.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok6.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Things fall apart",
-  },
-  {
-    imgsrc: "/bok2.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Days of sadness",
-  },
-  {
-    imgsrc: "/bok3.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok4.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok5.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok6.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Things fall apart",
-  },
-  {
-    imgsrc: "/bok2.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Days of sadness",
-  },
-  {
-    imgsrc: "/bok3.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok4.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok5.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok6.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Things fall apart",
-  },
-  {
-    imgsrc: "/bok2.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Days of sadness",
-  },
-  {
-    imgsrc: "/bok3.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok4.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok5.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok6.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Things fall apart",
-  },
-  {
-    imgsrc: "/bok2.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "Days of sadness",
-  },
-  {
-    imgsrc: "/bok3.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok4.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok5.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-  {
-    imgsrc: "/bok6.png",
-    userName: "@Allen",
-    price: "50,00 KR",
-    bookTitle: "hej hej hej",
-  },
-];
+type Props = {
+  books: SelectBooksWithSeller[];
+};
 
-const ExploreBooks = () => {
+const ExploreBooks = ({ books }: Props) => {
   return (
     <>
       <AppShell
@@ -317,11 +33,11 @@ const ExploreBooks = () => {
             return (
               <>
                 <BookLayout
-                  key={book.bookTitle}
-                  imgsrc={book.imgsrc}
-                  userName={book.userName}
+                  key={book.ID}
+                  imgsrc={book.bookCover}
+                  userName={book.seller.fullName}
                   price={book.price}
-                  bookTitle={book.bookTitle}
+                  bookTitle={book.title}
                 />
               </>
             );
@@ -333,3 +49,17 @@ const ExploreBooks = () => {
 };
 
 export default ExploreBooks;
+
+export const getServerSideProps = async () => {
+  const res = await db.query.booksTable.findMany({
+    with: { seller: true },
+    where: eq(booksTable.isSold, false),
+  });
+
+  console.log(res);
+  return {
+    props: {
+      books: res,
+    },
+  };
+};

@@ -7,7 +7,7 @@ import Link from "next/link";
 type Props = {
   imgsrc: string;
   userName: string;
-  price: string;
+  price: number;
   bookTitle: string;
 };
 
@@ -17,7 +17,7 @@ const BookLayout = ({ imgsrc, userName, price, bookTitle }: Props) => {
   return (
     <div className={styles.parentWrapper}>
       <div className={styles.imgWrapper}>
-        <Image src={imgsrc} fill alt=""></Image>
+        <Image src={"data:image/jpeg;base64," + imgsrc} fill alt=""></Image>
       </div>
       <div className={styles.heartAndUserNameWrapper}>
         <p>{userName}</p>
@@ -30,7 +30,7 @@ const BookLayout = ({ imgsrc, userName, price, bookTitle }: Props) => {
       </div>
 
       <div className={styles.wrapperBookTextContent}>
-        <p className={styles.price}>{price}</p>
+        <p className={styles.price}>{price} KR</p>
         <p className={styles.bookTitle}>{bookTitle}</p>
       </div>
       <div className={styles.cartWrapper}>
