@@ -9,7 +9,7 @@ CREATE TABLE `books` (
 	`userDescription` text NOT NULL,
 	`ratingScore` integer NOT NULL,
 	`sellerUserID` text NOT NULL,
-	`buyerUserID` text NOT NULL,
+	`buyerUserID` text,
 	`isSold` integer DEFAULT false,
 	FOREIGN KEY (`sellerUserID`) REFERENCES `users`(`ID`) ON UPDATE no action ON DELETE no action,
 	FOREIGN KEY (`buyerUserID`) REFERENCES `users`(`ID`) ON UPDATE no action ON DELETE no action
@@ -32,7 +32,7 @@ CREATE TABLE `likes` (
 CREATE TABLE `users` (
 	`ID` text PRIMARY KEY NOT NULL,
 	`fullName` text NOT NULL,
-	`address` integer NOT NULL,
+	`address` text NOT NULL,
 	`email` text NOT NULL,
 	`postalCode` text NOT NULL,
 	`city` text NOT NULL,

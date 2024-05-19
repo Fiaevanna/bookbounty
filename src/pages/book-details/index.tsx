@@ -11,8 +11,8 @@ const BookDetails = () => {
       <AppShell title={<PageTitle text="BOOK DETAILS" />}>
         <UserInfo />
         <BookContent
-          bookTitle="THINGS FALL APART"
-          imgsrc="/dream.jpg"
+          bookTitle="THE GREAT GATSBY"
+          imgsrc="/bookgatsby.jpg"
           releaseYear="Release year: 1990"
           price="50,00 KR"
           author="Chinua Achebe"

@@ -29,7 +29,6 @@ export const booksTable = sqliteTable("books", {
     .notNull()
     .references(() => usersTable.ID),
   buyerUserID: text("buyerUserID")
-    .notNull()
     .references(() => usersTable.ID),
   isSold: integer("isSold", { mode: "boolean" }).default(false),
 });

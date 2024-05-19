@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "3244d1bf-31b9-43e6-9f80-b369a5ce1363",
+  "id": "450817f7-af7f-4490-aaed-749fadf776f8",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "books": {
@@ -81,7 +81,7 @@
           "name": "buyerUserID",
           "type": "text",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         },
         "isSold": {
@@ -244,7 +244,7 @@
         },
         "address": {
           "name": "address",
-          "type": "integer",
+          "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
