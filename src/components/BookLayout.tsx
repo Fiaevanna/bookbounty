@@ -20,10 +20,10 @@ const BookLayout = ({ imgsrc, userName, price, bookTitle }: Props) => {
         <Image src={"data:image/jpeg;base64," + imgsrc} fill alt=""></Image>
       </div>
       <div className={styles.heartAndUserNameWrapper}>
-        <p>{userName}</p>
+        <p>@{userName}</p>
 
         <Heart
-          size={13}
+          size={14}
           fill={filled ? "var(--HeaderTextColor)" : "none"}
           onClick={() => setFilled((prevState) => !prevState)}
         />
