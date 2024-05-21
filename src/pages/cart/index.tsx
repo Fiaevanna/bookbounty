@@ -3,37 +3,37 @@ import PageTitle from "@/components/PageTitle";
 import styles from "./cart.module.css";
 import CartContent from "./CartContent";
 import Button from "@/components/Button";
-
+import { getBooks } from "@/db/booksQueries";
+import { useState } from "react";
+import { SelectBooksWithSeller } from "@/db/schema";
 
 /* Här ska hantering av trash can hanteras  */
 
-type Book = {
-  img: string;
-  title: string;
-  author: string;
-  price: string;
-  priceRaw: number;
-};
-
 type Props = {
-  bookCart: Book[];
   shipping: number;
   totalSum: number;
+  priceRaw: number;
+  dbBooks: SelectBooksWithSeller[];
 };
 
-const Cart = ({ bookCart, shipping, totalSum }: Props) => {
+const Cart = ({ dbBooks, shipping, totalSum }: Props) => {
+  const [books, setBooks] = useState(dbBooks);
+
   return (
     <>
       <AppShell title={<PageTitle className={styles.title} text="CART" />}>
         <div className={styles.line}></div>
-        {bookCart.map((book) => {
+        {books.map((book) => {
           return (
             <>
               <CartContent
-                img={book.img}
+                key={book.ID}
+                imgsrc={book.bookCover}
                 title={book.title}
-                author={book.author}
+                author={book.authorName}
                 price={book.price}
+                ID={[]}
+                dbBooks={[]}
               />
             </>
           );
@@ -71,55 +71,19 @@ export default Cart;
 https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props
 */
 
-export const getServerSideProps = () => {
-  const bookCart = [
-    {
-      img: "/bok.png",
-      title: "CRAZY NIGHT",
-      author: "Lola Lisa",
-      price: "70,00 KR",
-      priceRaw: 70.5,
-    },
-    {
-      img: "/bok3.png",
-      title: "NIGHT",
-      author: "Lars lok",
-      price: "100,00 KR",
-      priceRaw: 100.0,
-    },
-    {
-      img: "/bok4.png",
-      title: "GRÖNSKAN ÄR HÄR",
-      author: "Steeven bloom",
-      price: "40,00 KR",
-      priceRaw: 40.0,
-    },
-    {
-      img: "/bok6.png",
-      title: "LUSEM",
-      author: "Agnes Krans",
-      price: "100,00 KR",
-      priceRaw: 100.0,
-    },
-    {
-      img: "/bok2.png",
-      title: "NIGHT",
-      author: "Lars lok",
-      price: "100,00 KR",
-      priceRaw: 100.0,
-    },
-  ];
+export const getServerSideProps = async () => {
+  const books = await getBooks(false);
   const shipping = 49.0;
 
   const calcTotalSum = () => {
     let sum = 0;
-    bookCart.forEach(({ priceRaw }) => (sum += priceRaw));
+    books.forEach(({ price }) => (sum += price));
     return sum + shipping;
   };
 
   return {
     props: {
-      bookCart,
+      dbBooks: books,
       shipping,
       totalSum: calcTotalSum(),
     },

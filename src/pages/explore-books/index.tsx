@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
 import styles from "@/styles/exploreBooks.module.css";
 import AppShell from "@/components/AppShell";
