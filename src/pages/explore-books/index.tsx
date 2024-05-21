@@ -1,3 +1,4 @@
+import { FormEvent, useState } from "react";
 import PageTitle from "@/components/PageTitle";
 import styles from "@/styles/exploreBooks.module.css";
 import AppShell from "@/components/AppShell";
@@ -5,15 +6,18 @@ import Image from "next/image";
 import InputField from "@/components/InputField";
 import { Search } from "lucide-react";
 import BookLayout from "@/components/BookLayout";
-import { db } from "@/db/db";
-import { booksTable, SelectBooks, SelectUsers, SelectBooksWithSeller } from "@/db/schema";
-import { eq, exists, sql } from "drizzle-orm";
+import { SelectBooksWithSeller } from "@/db/schema";
+import { getBooks } from "@/db/booksQueries";
 
 type Props = {
-  books: SelectBooksWithSeller[];
+  dbBooks: SelectBooksWithSeller[];
 };
 
-const ExploreBooks = ({ books }: Props) => {
+const ExploreBooks = ({ dbBooks }: Props) => {
+  const [books, setBooks] = useState(dbBooks);
+  const [search, setSearch] = useState("");
+  console.log(search);
+
   return (
     <>
       <AppShell
@@ -24,24 +28,32 @@ const ExploreBooks = ({ books }: Props) => {
         </div>
 
         <InputField
+          onChange={(e) => setSearch(e.target.value)}
           className={styles.searchInput}
           placeholder="Search..."
           rightIcon={<Search className={styles.icon} size={15} />}
         />
         <div className={styles.wrapperBookTextContent}>
-          {books.map((book) => {
-            return (
-              <>
-                <BookLayout
-                  key={book.ID}
-                  imgsrc={book.bookCover}
-                  userName={book.seller.fullName}
-                  price={book.price}
-                  bookTitle={book.title}
-                />
-              </>
-            );
-          })}
+          {books
+            .filter((book) => {
+              return search.toLocaleLowerCase() === ""
+                ? book
+                : book.title.toLocaleLowerCase().includes(search) ||
+                    book.authorName.toLocaleLowerCase().includes(search);
+            })
+            .map((book) => {
+              return (
+                <>
+                  <BookLayout
+                    key={book.ID}
+                    imgsrc={book.bookCover}
+                    userName={book.seller.fullName}
+                    price={book.price}
+                    bookTitle={book.title}
+                  />
+                </>
+              );
+            })}
         </div>
       </AppShell>
     </>
@@ -50,16 +62,13 @@ const ExploreBooks = ({ books }: Props) => {
 
 export default ExploreBooks;
 
-export const getServerSideProps = async () => {
-  const res = await db.query.booksTable.findMany({
-    with: { seller: true },
-    where: eq(booksTable.isSold, false),
-  });
+/* Här har jag min backend del, som hämtar alla böcker som inte är sålda och även hämtar användar id */
 
-  console.log(res);
+export const getServerSideProps = async () => {
+  const books = await getBooks(false);
   return {
     props: {
-      books: res,
+      dbBooks: books,
     },
   };
 };
