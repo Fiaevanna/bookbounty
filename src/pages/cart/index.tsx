@@ -19,6 +19,10 @@ type Props = {
 const Cart = ({ dbBooks, shipping, totalSum }: Props) => {
   const [books, setBooks] = useState(dbBooks);
 
+  const handelOnRemove = (ID: Number) => {
+    setBooks((book) => book.filter((book) => book.ID !== ID));
+    
+  };
   return (
     <>
       <AppShell title={<PageTitle className={styles.title} text="CART" />}>
@@ -32,8 +36,9 @@ const Cart = ({ dbBooks, shipping, totalSum }: Props) => {
                 title={book.title}
                 author={book.authorName}
                 price={book.price}
-                ID={[]}
-                dbBooks={[]}
+                handelOnRemove={handelOnRemove}
+                ID={book.ID}
+                dbBooks={books}
               />
             </>
           );

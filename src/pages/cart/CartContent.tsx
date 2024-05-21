@@ -2,27 +2,27 @@ import styles from "./CartContent.module.css";
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
 import HeartIcon from "@/components/Likes";
-import { getBooks } from "@/db/booksQueries";
-import { SelectBooks, SelectBooksWithSeller } from "@/db/schema";
-import { useState } from "react";
+import { SelectBooksWithSeller } from "@/db/schema";
+
 
 type Props = {
+  ID: number;
   imgsrc: string;
   title: string;
   author: string;
   price: number;
-  ID: SelectBooks[];
   dbBooks: SelectBooksWithSeller[];
+  handelOnRemove: (ID: number) => void;
 };
 
-const CartContent = ({ dbBooks, author, title, price, imgsrc }: Props) => {
-  const [books, setBooks] = useState(dbBooks);
-  
-
-  const handelOnRemove = ({ ID }: Props) => {
-    setBooks((book) => book.filter((book) => book.ID !== book.ID));
-    
-  };
+const CartContent = ({
+  author,
+  title,
+  price,
+  imgsrc,
+  handelOnRemove,
+  ID,
+}: Props) => {
   return (
     <>
       <div className={styles.layout}>
@@ -40,7 +40,11 @@ const CartContent = ({ dbBooks, author, title, price, imgsrc }: Props) => {
             <p>{author}</p>
             <p className={styles.price}>{price} KR</p>
             <div className={styles.iconWrapper}>
-              <Trash2 className={styles.trash2} size={17} onClick={() => {}}/>
+              <Trash2
+                className={styles.trash2}
+                size={17}
+                onClick={() => handelOnRemove(ID)}
+              />
               <p>remove</p>
               <p>/</p>
               <HeartIcon />
@@ -55,13 +59,3 @@ const CartContent = ({ dbBooks, author, title, price, imgsrc }: Props) => {
 };
 
 export default CartContent;
-
-export const getServerSideProps = async () => {
-  const books = await getBooks(false);
-
-  return {
-    props: {
-      dbBooks: books,
-    },
-  };
-};
