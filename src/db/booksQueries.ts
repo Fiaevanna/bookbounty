@@ -10,3 +10,31 @@ export const getBooks = async (isSold: boolean) => {
   });
   return res;
 };
+
+/* // BOOKS
+addBookForSale
+
+getBooks
+getBook
+
+
+getMyFavouriteBooks
+getMyCartBooks
+
+addBookToCart
+deleteBookFromCart
+deleteBook
+
+getMyBooksForSale
+addBookToFavourites
+deleteBookFromFavourites
+
+
+// USERS
+
+createUser
+updateUser
+getUser
+
+ */
+

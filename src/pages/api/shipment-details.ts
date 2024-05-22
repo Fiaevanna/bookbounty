@@ -15,7 +15,7 @@ const validateBody = ({
   const { fullName, address, postalCode, city, country, phone } = req.body;
 
   if (fullName === "" || !fullName) {
-    return { isValid: false, message: "Full name can't be empty " };
+    return { isValid: false, message: "Full name can't be empty" };
   }
   if (address === "" || !address) {
     return { isValid: false, message: "address can't be empty " };
@@ -59,8 +59,8 @@ export default async function handler(
     const res = await clerkClient.users.updateUser(userId, {
       publicMetadata: {
         onboardingComplete: true,
-        /*   applicationName: formData.get("applicationName"),
-        applicationType: formData.get("applicationType"), */
+          //applicationName: formData.get("applicationName"),
+            //applicationType: formData.get("applicationType"),
       },
     });
     console.log("RES FROM CLERK: ", res)

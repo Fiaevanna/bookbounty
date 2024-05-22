@@ -2,11 +2,54 @@ import { Button } from "@/components/Button";
 import InputField from "@/components/InputField";
 import styles from "@/styles/shipmentDetails.module.css";
 import { getAuth } from "@clerk/nextjs/server";
-
 import { NextRequest } from "next/server";
+import { useState } from "react";
 /* Här ska logik in för att spara all info från input till settings/profilen  */
 
 const ShipmentDetails = () => {
+  const [message, setMessage] = useState("");
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    address: "",
+    postalCode: "",
+    city: "",
+    country: "",
+    phone: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setMessage("")
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  /* skickar in data till api endpoint  */
+  const submit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setMessage("")
+    const response = await fetch("http://localhost:3000/api/shipment-details", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      const message = data?.message || `Something went wrong!`;
+      setMessage(message);
+      return
+    }
+
+
+
+    console.log("RESPONSE", response, "DATA", data);
+  };
+
+  console.log(formData);
   return (
     <>
       <div className={styles.shipmentCard}>
@@ -28,6 +71,8 @@ const ShipmentDetails = () => {
                     type="text"
                     name="fullName"
                     maxLength={15}
+                    value={formData.fullName}
+                    onChange={handleChange}
                   />
 
                   <div className={styles.formFieldLabelRow}>
@@ -40,6 +85,8 @@ const ShipmentDetails = () => {
                     type="text"
                     name="address"
                     maxLength={15}
+                    value={formData.address}
+                    onChange={handleChange}
                   />
 
                   <div className={styles.formFieldLabelRow}>
@@ -52,6 +99,8 @@ const ShipmentDetails = () => {
                     type="text"
                     name="postalCode"
                     maxLength={5}
+                    value={formData.postalCode}
+                    onChange={handleChange}
                   />
 
                   <div className={styles.formFieldLabelRow}>
@@ -64,6 +113,8 @@ const ShipmentDetails = () => {
                     type="text"
                     name="city"
                     maxLength={15}
+                    value={formData.city}
+                    onChange={handleChange}
                   />
 
                   <div className={styles.formFieldLabelRow}>
@@ -74,8 +125,10 @@ const ShipmentDetails = () => {
                   <InputField
                     className={styles.inputField}
                     type="text"
-                    name="city"
+                    name="country"
                     maxLength={15}
+                    value={formData.country}
+                    onChange={handleChange}
                   />
 
                   <div className={styles.formFieldLabelRow}>
@@ -88,13 +141,19 @@ const ShipmentDetails = () => {
                     type="number"
                     name="phone"
                     maxLength={10}
+                    value={formData.phone}
+                    onChange={handleChange}
                   />
-
+                  <div className={styles.errorWrapper}>
+                    <p className={styles.message}>{message}</p>
+                  </div>
                   <div>
                     <Button
-                      to="/sign-in"
                       text="CREATE ACCOUNT"
                       className={styles.shipDetailsBtn}
+                      type="submit"
+                      onClick={submit}
+                      /* när jag klickar på knappen så vill jag skicka min form data till till endpointen */
                     />
                   </div>
                 </form>
@@ -112,7 +171,7 @@ export default ShipmentDetails;
 export const getServerSideProps = ({ req }: { req: NextRequest }) => {
   // Kollar om användare redan har gjort shipment-details (onboarding), om de har gjort det skicka de till explore books
   const onboardingIsCompleted =
-    getAuth(req).sessionClaims?.metadata.onboardingComplete === true;
+    getAuth(req).sessionClaims?.metadata?.onboardingComplete === true;
   if (onboardingIsCompleted) {
     return {
       redirect: {
