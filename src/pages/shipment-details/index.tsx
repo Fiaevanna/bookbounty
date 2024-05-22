@@ -1,8 +1,9 @@
-
 import { Button } from "@/components/Button";
 import InputField from "@/components/InputField";
 import styles from "@/styles/shipmentDetails.module.css";
+import { getAuth } from "@clerk/nextjs/server";
 
+import { NextRequest } from "next/server";
 /* Här ska logik in för att spara all info från input till settings/profilen  */
 
 const ShipmentDetails = () => {
@@ -107,3 +108,22 @@ const ShipmentDetails = () => {
 };
 
 export default ShipmentDetails;
+
+export const getServerSideProps = ({ req }: { req: NextRequest }) => {
+  // Kollar om användare redan har gjort shipment-details (onboarding), om de har gjort det skicka de till explore books
+  const onboardingIsCompleted =
+    getAuth(req).sessionClaims?.metadata.onboardingComplete === true;
+  if (onboardingIsCompleted) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/explore-books",
+      },
+      props: {},
+    };
+  }
+
+  return {
+    props: {},
+  };
+};

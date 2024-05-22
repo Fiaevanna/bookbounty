@@ -17,6 +17,9 @@
   color: var(--HeaderTextColor);
   font-family: var(--special-font);
   font-size: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+ 
 }
 
 .navbtn {

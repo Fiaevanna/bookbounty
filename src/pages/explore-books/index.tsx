@@ -16,7 +16,6 @@ type Props = {
 const ExploreBooks = ({ dbBooks }: Props) => {
   const [books, setBooks] = useState(dbBooks);
   const [search, setSearch] = useState("");
-  console.log(search);
 
   return (
     <>
