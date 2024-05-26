@@ -5,8 +5,16 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 /* Här sätter jag upp och hanterar hur och vart användaren ska hamna på sidan och se till att man inte kan manipulera urlen och auth hantering */
-const isOnboardingRoute = createRouteMatcher(["/shipment-details", "/api/shipment-details"]);
-const isPublicRoute = createRouteMatcher(["/", "/sign-in", "/sign-up"]);
+const isOnboardingRoute = createRouteMatcher([
+  "/shipment-details(.*)",
+  "/api/shipment-details",
+]);
+const isPublicRoute = createRouteMatcher([
+  "/",
+  "/sign-in(.*)",
+  "/sign-up(.*)",
+  "/static(.*)",
+]);
 
 export default clerkMiddleware((auth, req: NextRequest) => {
   const { userId, sessionClaims, redirectToSignIn } = auth();
@@ -23,7 +31,9 @@ export default clerkMiddleware((auth, req: NextRequest) => {
     const onboardingUrl = new URL("/shipment-details", req.url);
     return NextResponse.redirect(onboardingUrl);
   }
-  if (userId && !isPublicRoute(req)) return NextResponse.next();
+  if (userId && !isPublicRoute(req)) {
+    return NextResponse.next();
+  }
 });
 
 export const config = {

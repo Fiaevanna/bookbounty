@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <img
             className={styles.img}
-            src="/cover.jpg"
+            src="/static/cover.jpg"
             alt=" painting of girl reading book"
           />
           <div className={styles.imgCtaContent}>

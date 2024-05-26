@@ -23,7 +23,7 @@ const ExploreBooks = ({ dbBooks }: Props) => {
         title={<PageTitle className={styles.title} text="EXPLORE BOOKS" />}
       >
         <div className={styles.img}>
-          <Image src="/exploreBImg.jpg" fill alt="munks reading books"></Image>
+          <Image src="/static/exploreBImg.jpg" fill alt="munks reading books"></Image>
         </div>
 
         <InputField

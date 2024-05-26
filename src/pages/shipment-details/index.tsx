@@ -1,12 +1,15 @@
 import { Button } from "@/components/Button";
 import InputField from "@/components/InputField";
 import styles from "@/styles/shipmentDetails.module.css";
+import { useUser } from '@clerk/clerk-react';
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest } from "next/server";
 import { useState } from "react";
+import { useRouter } from 'next/router'
 /* Här ska logik in för att spara all info från input till settings/profilen  */
 
 const ShipmentDetails = () => {
+  const router = useRouter()
   const [message, setMessage] = useState("");
 
   const [formData, setFormData] = useState({
@@ -20,7 +23,7 @@ const ShipmentDetails = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setMessage("")
+    setMessage("");
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -30,7 +33,7 @@ const ShipmentDetails = () => {
   /* skickar in data till api endpoint  */
   const submit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setMessage("")
+    setMessage("");
     const response = await fetch("http://localhost:3000/api/shipment-details", {
       method: "POST",
       body: JSON.stringify(formData),
@@ -41,12 +44,13 @@ const ShipmentDetails = () => {
     if (!response.ok) {
       const message = data?.message || `Something went wrong!`;
       setMessage(message);
-      return
+      return;
     }
 
-
-
-    console.log("RESPONSE", response, "DATA", data);
+    /* skicka vidare användare till explore books  */
+    
+    await router.reload();
+    await router.push('/explore-books');
   };
 
   console.log(formData);
@@ -172,6 +176,7 @@ export const getServerSideProps = ({ req }: { req: NextRequest }) => {
   // Kollar om användare redan har gjort shipment-details (onboarding), om de har gjort det skicka de till explore books
   const onboardingIsCompleted =
     getAuth(req).sessionClaims?.metadata?.onboardingComplete === true;
+
   if (onboardingIsCompleted) {
     return {
       redirect: {

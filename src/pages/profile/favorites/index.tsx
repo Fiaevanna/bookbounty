@@ -50,7 +50,7 @@ const Favorites = () => {
   return (
     <>
       <AppShell title={<PageTitle text="MY FAVORITES" />}>
-        <SettingsProfile src={"/jojo.jpg"} userName={"Allen"} />
+        <SettingsProfile src={"/static/jojo.jpg"} userName={"Allen"} />
         <div className={styles.wrapper}>
           <p className={styles.title}>MY SELECTION </p>
           <Heart size={16} fill="" />

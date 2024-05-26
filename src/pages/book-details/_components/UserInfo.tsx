@@ -10,7 +10,7 @@ const UserInfo = () => {
           <div className={styles.imgWrapper}>
             <Image
               className={styles.profileImg}
-              src="/jojo.jpg"
+              src="/static/jojo.jpg"
               fill
               alt="profile"
             ></Image>

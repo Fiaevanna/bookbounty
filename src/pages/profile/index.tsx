@@ -7,7 +7,7 @@ const Profile = () => {
   return (
     <>
       <AppShell title={<PageTitle text="PROFILE" />}>
-        <SettingsProfile  src="/jojo.jpg" userName="Allen" />
+        <SettingsProfile  src="/static/jojo.jpg" userName="Allen" />
         <Menu />
       </AppShell>
     </>

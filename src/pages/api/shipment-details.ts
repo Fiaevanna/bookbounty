@@ -1,5 +1,7 @@
 import { getAuth, clerkClient } from "@clerk/nextjs/server";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { createUser } from "@/db/usersQueries";
+import { InsertUsers } from "@/db/schema";
 
 type ResponseData = {
   message: string;
@@ -43,7 +45,7 @@ export default async function handler(
   if (req.method !== "POST") {
     return res.status(404).json({ message: "Only POST!" });
   }
-
+  /* ge mig användar id finns det inte skicka felmeddelandet */
   const { userId } = getAuth(req);
   if (!userId) {
     return res.status(401).json({ message: "You need to compleat sign-up :)" });
@@ -59,16 +61,26 @@ export default async function handler(
     const res = await clerkClient.users.updateUser(userId, {
       publicMetadata: {
         onboardingComplete: true,
-          //applicationName: formData.get("applicationName"),
-            //applicationType: formData.get("applicationType"),
       },
     });
-    console.log("RES FROM CLERK: ", res)
+
+    const [emailObject] = res?.emailAddresses
+    const { emailAddress } = emailObject;
+
+    const user: InsertUsers = {
+        ID: userId,
+        email: emailAddress,
+        ...req.body
+    }
+
+    //skapa användaren till din databas
+    await createUser(user);
+
+    console.log("RES FROM CLERK: ", emailAddress);
   } catch (err) {
     return res.status(500).json({ message: "Something went wrong" });
   }
 
-  // save user to my database
 
   res.status(200).json({ message: "Hello from Next POST" });
 }

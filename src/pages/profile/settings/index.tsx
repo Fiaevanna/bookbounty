@@ -9,7 +9,7 @@ const Settings = () => {
     <>
       <AppShell title={<PageTitle className={styles.title} text="SETTINGS" />}>
         <div>
-          <SettingsProfile src="/jojo.jpg" userName="Allen" />
+          <SettingsProfile src="/static/jojo.jpg" userName="Allen" />
         </div>
         <SettingsMenu/>
       </AppShell>

@@ -12,7 +12,7 @@ const BookDetails = () => {
         <UserInfo />
         <BookContent
           bookTitle="THE GREAT GATSBY"
-          imgsrc="/bookgatsby.jpg"
+          imgsrc="/static/bookgatsby.jpg"
           releaseYear="Release year: 1990"
           price="50,00 KR"
           author="Chinua Achebe"

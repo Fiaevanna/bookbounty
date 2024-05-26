@@ -31,7 +31,7 @@ const MyProfile = () => {
         <div className={styles.imgWrapper}>
           <SettingsProfile
             className={styles.img}
-            src={"/jojo.jpg"}
+            src={"/static/jojo.jpg"}
             userName={"Allen"}
           />
         </div>

@@ -15,7 +15,7 @@ const Checkout = () => {
           <div className={styles.imgWrapper}>
             <Image
               className={styles.img}
-              src={"/still.jpg"}
+              src={"/static/still.jpg"}
               fill
               alt=""
             ></Image>
