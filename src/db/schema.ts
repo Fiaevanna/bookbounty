@@ -12,7 +12,7 @@ export const usersTable = sqliteTable("users", {
   city: text("city").notNull(),
   country: text("country").notNull(),
   phone: integer("phone").unique().notNull(),
-  profileImage: blob("profileImage"),
+  profileImage: blob("profileImage").$type<string>(),
 });
 
 export const booksTable = sqliteTable("books", {

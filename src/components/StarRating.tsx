@@ -2,10 +2,13 @@ import { Star } from "lucide-react";
 import { useState } from "react";
 import styles from "@/components/StarRating.module.css";
 
-const StarRating = () => {
-  const [rating, setRating] = useState<number>(0);
+type Props = {
+  defaultRating: number;
+}
+
+const StarRating = ({ defaultRating }: Props) => {
+  const [rating, setRating] = useState<number>(defaultRating);
   const [hover, setHover] = useState<number>(0);
-  console.log(hover);
   return (
     <>
       {[...Array(5)].map((star, index) => {

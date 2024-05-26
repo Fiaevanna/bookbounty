@@ -5,20 +5,24 @@ import { useState } from "react";
 import Link from "next/link";
 
 type Props = {
+  ID: number;
   imgsrc: string;
   userName: string;
   price: number;
   bookTitle: string;
 };
 
-const BookLayout = ({ imgsrc, userName, price, bookTitle }: Props) => {
+const BookLayout = ({ ID, imgsrc, userName, price, bookTitle }: Props) => {
   const [filled, setFilled] = useState(false);
 
   return (
     <div className={styles.parentWrapper}>
-      <div className={styles.imgWrapper}>
-        <Image src={"data:image/jpeg;base64," + imgsrc} fill alt=""></Image>
-      </div>
+      <Link className={styles.link} href={`/book-details/${ID}`}>
+        <div className={styles.imgWrapper}>
+          <Image src={"data:image/jpeg;base64," + imgsrc} fill alt=""></Image>
+        </div>
+      </Link>
+
       <div className={styles.heartAndUserNameWrapper}>
         <p>@{userName}</p>
 

@@ -1,4 +1,3 @@
-
 import withSerwistInit from "@serwist/next";
 
 const withSerwist = withSerwistInit({
@@ -11,6 +10,11 @@ const withSerwist = withSerwistInit({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "thispersondoesnotexist.com", port: "" },
+    ],
+  },
 };
 
 export default withSerwist(nextConfig);

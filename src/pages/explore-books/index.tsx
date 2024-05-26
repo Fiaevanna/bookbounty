@@ -45,6 +45,7 @@ const ExploreBooks = ({ dbBooks }: Props) => {
                 <>
                   <BookLayout
                     key={book.ID}
+                    ID={book.ID}
                     imgsrc={book.bookCover}
                     userName={book.seller.fullName}
                     price={book.price}

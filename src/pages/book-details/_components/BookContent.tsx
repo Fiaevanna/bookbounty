@@ -23,7 +23,7 @@ const BookContent = ({
     <div className={styles.bookLayout}>
       <p className={styles.title}>{bookTitle}</p>
       <div className={styles.imgWrapper}>
-        <Image className={styles.img} src={imgsrc} fill alt=""></Image>
+        <Image className={styles.img} src={"data:image/jpeg;base64," + imgsrc} fill alt=""></Image>
       </div>
 
       <div className={styles.textContentWrapper}>
