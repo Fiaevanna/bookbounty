@@ -2,7 +2,7 @@ import styles from "./CartContent.module.css";
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
 import HeartIcon from "@/components/Likes";
-import { SelectBooksWithSeller } from "@/db/schema";
+import { SelectBooksAll } from "@/db/schema";
 
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
   title: string;
   author: string;
   price: number;
-  dbBooks: SelectBooksWithSeller[];
+  dbBooks: SelectBooksAll[];
   handelOnRemove: (ID: number) => void;
 };
 

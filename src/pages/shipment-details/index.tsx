@@ -34,7 +34,7 @@ const ShipmentDetails = () => {
   const submit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setMessage("");
-    const response = await fetch("http://localhost:3000/api/shipment-details", {
+    const response = await fetch("/api/shipment-details", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: { "Content-Type": "application/json" },

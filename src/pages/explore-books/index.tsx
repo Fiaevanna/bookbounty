@@ -6,16 +6,18 @@ import Image from "next/image";
 import InputField from "@/components/InputField";
 import { Search } from "lucide-react";
 import BookLayout from "@/components/BookLayout";
-import { SelectBooksWithSeller } from "@/db/schema";
+import { SelectBooksAll } from "@/db/schema";
 import { getBooks } from "@/db/booksQueries";
 
 type Props = {
-  dbBooks: SelectBooksWithSeller[];
+  dbBooks: SelectBooksAll[];
 };
 
 const ExploreBooks = ({ dbBooks }: Props) => {
   const [books, setBooks] = useState(dbBooks);
   const [search, setSearch] = useState("");
+
+  console.log(dbBooks)
 
   return (
     <>
@@ -50,6 +52,7 @@ const ExploreBooks = ({ dbBooks }: Props) => {
                     userName={book.seller.fullName}
                     price={book.price}
                     bookTitle={book.title}
+                    bookIsLiked={book.isLiked ? true : false}
                   />
                 </>
               );

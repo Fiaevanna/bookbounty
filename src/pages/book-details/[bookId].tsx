@@ -5,11 +5,11 @@ import BookContent from "./_components/BookContent";
 import Button from "@/components/Button";
 import styles from "./_components/BookContent.module.css";
 import { getBook } from "@/db/booksQueries";
-import { SelectBooksWithSeller } from "@/db/schema";
+import { SelectBooksAll } from "@/db/schema";
 import { useUser } from "@clerk/nextjs";
 
 type Props = {
-  book: SelectBooksWithSeller;
+  book: SelectBooksAll;
 };
 
 const BookDetails = ({ book }: Props) => {

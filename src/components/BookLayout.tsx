@@ -10,10 +10,25 @@ type Props = {
   userName: string;
   price: number;
   bookTitle: string;
+  bookIsLiked: boolean;
 };
 
-const BookLayout = ({ ID, imgsrc, userName, price, bookTitle }: Props) => {
-  const [filled, setFilled] = useState(false);
+const BookLayout = ({ ID, imgsrc, userName, price, bookTitle, bookIsLiked }: Props) => {
+  const [isLiked, setIsLiked] = useState(bookIsLiked);
+
+  const handleOnLike = async () => {
+
+    const newIsLiked = !isLiked;
+
+    
+    setIsLiked(newIsLiked)
+
+    const res = await fetch("/api/users/me/like", {
+      method: "POST",
+      body: JSON.stringify({ bookID: ID, isLiked: newIsLiked }),
+      headers: { "Content-Type": "application/json" },
+    })
+  }
 
   return (
     <div className={styles.parentWrapper}>
@@ -28,8 +43,8 @@ const BookLayout = ({ ID, imgsrc, userName, price, bookTitle }: Props) => {
 
         <Heart
           size={14}
-          fill={filled ? "var(--HeaderTextColor)" : "none"}
-          onClick={() => setFilled((prevState) => !prevState)}
+          fill={isLiked ? "var(--HeaderTextColor)" : "none"}
+          onClick={() => handleOnLike()}
         />
       </div>
 

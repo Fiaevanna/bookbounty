@@ -5,7 +5,7 @@ import CartContent from "./CartContent";
 import Button from "@/components/Button";
 import { getBooks } from "@/db/booksQueries";
 import { useState } from "react";
-import { SelectBooksWithSeller } from "@/db/schema";
+import { SelectBooksAll } from "@/db/schema";
 
 /* Här ska hantering av trash can hanteras  */
 
@@ -13,7 +13,7 @@ type Props = {
   shipping: number;
   totalSum: number;
   priceRaw: number;
-  dbBooks: SelectBooksWithSeller[];
+  dbBooks: SelectBooksAll[];
 };
 
 const Cart = ({ dbBooks, shipping, totalSum }: Props) => {
