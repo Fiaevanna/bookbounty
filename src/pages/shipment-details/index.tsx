@@ -49,7 +49,6 @@ const ShipmentDetails = () => {
 
     /* skicka vidare användare till explore books  */
     
-    await router.reload();
     await router.push('/explore-books');
   };
 
