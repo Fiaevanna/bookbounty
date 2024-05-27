@@ -1,6 +1,6 @@
 import { eq, and, or } from "drizzle-orm";
 import { db } from "@/db/db";
-import { booksTable, likesTable, usersTable } from "@/db/schema";
+import { InsertBooks, booksTable, likesTable, usersTable } from "@/db/schema";
 /* getBooks */
 export const getBooks = async (isSold: boolean, userId?: string | null) => {
   // Kod för att hämta böcker som är inte sålda med drizzle
@@ -66,6 +66,14 @@ export const getBook = async (ID: number) => {
   });
   return res;
 };
+
+
+export const addBookForSale = async (book: InsertBooks) => {
+  // Kod för att hämta böcker som är inte sålda med drizzle
+  const res = db.insert(booksTable).values(book)
+  return res;
+};
+
 
 /* // BOOKS
 addBookForSale

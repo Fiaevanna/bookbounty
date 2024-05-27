@@ -9,9 +9,6 @@ const Sell = () => {
     <>
       <AppShell title={<PageTitle text="UPLOAD BOOK" />}>
         <SellLayout/>
-        <Button to="" text="UPLOAD" className={styles.homePBtn}>
-          ADD TO CART
-        </Button>
       </AppShell>
     </>
   );
