@@ -14,7 +14,6 @@ type Props = {
 
 const BookDetails = ({ book }: Props) => {
   const user = useUser();
-  console.log(user);
   return (
     <>
       {user && (

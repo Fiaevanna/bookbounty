@@ -11,24 +11,35 @@ type Props = {
   price: number;
   bookTitle: string;
   bookIsLiked: boolean;
+  onLikeChange?: () => void;
 };
 
-const BookLayout = ({ ID, imgsrc, userName, price, bookTitle, bookIsLiked }: Props) => {
+const BookLayout = ({
+  ID,
+  imgsrc,
+  userName,
+  price,
+  bookTitle,
+  bookIsLiked,
+  onLikeChange,
+}: Props) => {
   const [isLiked, setIsLiked] = useState(bookIsLiked);
 
   const handleOnLike = async () => {
-
     const newIsLiked = !isLiked;
 
-    
-    setIsLiked(newIsLiked)
+    setIsLiked(newIsLiked);
 
     const res = await fetch("/api/users/me/like", {
       method: "POST",
       body: JSON.stringify({ bookID: ID, isLiked: newIsLiked }),
       headers: { "Content-Type": "application/json" },
-    })
-  }
+    });
+    
+    if (onLikeChange) {
+      onLikeChange()
+    }
+  };
 
   return (
     <div className={styles.parentWrapper}>

@@ -20,25 +20,42 @@ export const getBooks = async (isSold: boolean, userId?: string | null) => {
         )
       ),
     });
-    
-    books = books.map(book => {
-      const likeForBook = likes.find((like) => like.bookID === book.ID)
+
+    books = books.map((book) => {
+      const likeForBook = likes.find((like) => like.bookID === book.ID);
 
       if (likeForBook) {
         return {
           ...book,
           isLiked: true,
-        }
+        };
       }
 
       return {
         ...book,
-        isLiked: false
-      }
-    })
+        isLiked: false,
+      };
+    });
   }
 
   return books;
+};
+
+/* getBooks */
+export const getLikedBooks = async (userId: string) => {
+  const likes = await db.query.likesTable.findMany({
+    where: eq(likesTable.userID, userId),
+    with: {
+      book: {
+        with: {
+          seller: true
+        }
+      }
+    }
+  });
+
+
+  return likes;
 };
 
 export const getBook = async (ID: number) => {

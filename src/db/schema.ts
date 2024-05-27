@@ -62,20 +62,30 @@ export const booksRelations = relations(booksTable, ({ one }) => ({
   }),
 }));
 
+/* Här sätter jag upp relationen mellan likes och boken, https://orm.drizzle.team/docs/rqb */
+export const likesRelations = relations(likesTable, ({ one }) => ({
+  book: one(booksTable, {
+    fields: [likesTable.bookID],
+    references: [booksTable.ID],
+  }),
+}));
+
 /* använder drizzles stöd för att kunna typa mina tabels  */
 
 export type InsertUsers = typeof usersTable.$inferInsert;
 export type SelectUsers = typeof usersTable.$inferSelect;
-
-export type InsertLikes = typeof likesTable.$inferInsert;
-export type SelectLikes = typeof likesTable.$inferSelect;
-
-export type InsertCartItems = typeof cartItemsTable.$inferInsert;
-export type SelectCartItems = typeof cartItemsTable.$inferSelect;
-
 
 
 export type InsertBooks = typeof booksTable.$inferInsert;
 export type SelectBooks = typeof booksTable.$inferSelect;
 export type SelectBooksAll = SelectBooks & { seller: SelectUsers };
 export type SelectBooksAllWithLikes = SelectBooks & { seller: SelectUsers } & { isLiked: boolean; };
+
+export type InsertLikes = typeof likesTable.$inferInsert;
+export type SelectLikes = typeof likesTable.$inferSelect;
+export type SelectLikesAll = SelectLikes & { book: SelectBooksAll };
+
+export type InsertCartItems = typeof cartItemsTable.$inferInsert;
+export type SelectCartItems = typeof cartItemsTable.$inferSelect;
+
+
