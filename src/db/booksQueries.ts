@@ -13,6 +13,7 @@ export const getBooks = async (isSold: boolean, userId?: string | null) => {
   // OM vi har en användar id
   // OM vi inte har användare får vi tillbaka böckerna som de är i den sista return
   if (userId) {
+    // Hämta alla likes
     const likes = await db.query.likesTable.findMany({
       where: or(
         ...books.map((book) =>
@@ -21,6 +22,7 @@ export const getBooks = async (isSold: boolean, userId?: string | null) => {
       ),
     });
 
+    // För varje book, lägg till om vi har likat
     books = books.map((book) => {
       const likeForBook = likes.find((like) => like.bookID === book.ID);
 

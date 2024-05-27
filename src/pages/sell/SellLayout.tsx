@@ -19,6 +19,7 @@ const SellLayout = () => {
     ratingScore: 0,
   });
 
+  // Här skickar jag iväg booken för uppladning i mitt api med fetch och skickar användaren till explore-books om allt går bra
   const handleOnSubmit = async () => {
     const res = await fetch("/api/books", {
       method: "POST",
@@ -41,6 +42,13 @@ const SellLayout = () => {
     console.log(formData);
   };
 
+  /*
+    De tre funktionerna nedan är till för bookCover för att fil uppladning kräver en input med type="file",
+    så jag har en input med type="file" som är gömd, när man klickar på knappen så klickas det automatisk på input fältet
+    sen så väljer användren en bild och då triggas onChange på input fältet som tar bilden, konverterar till base64 och sen lägger till i form Data
+  */
+
+  // Konvertera bild till base64
   const convertBase64 = (file: File): Promise<string | ArrayBuffer | null> => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -54,6 +62,7 @@ const SellLayout = () => {
     });
   };
 
+  // On change för det gömmda input fältet med type="file"
   const handleOnBookCoverUpload = async (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -67,6 +76,7 @@ const SellLayout = () => {
     }
   };
 
+  // Knappen som synns och som automatisk klickar på det gömmda input fältet
   const handleOnUploadButtonClick = () => {
     const hiddenInputElement = document.getElementById("bookCoverUpload");
     hiddenInputElement?.click();
