@@ -56,10 +56,6 @@ export const booksRelations = relations(booksTable, ({ one }) => ({
     fields: [booksTable.sellerUserID],
     references: [usersTable.ID],
   }),
-  isLiked: one(likesTable, {
-    fields: [booksTable.ID],
-    references: [likesTable.bookID]
-  }),
   buyer: one(usersTable, {
     fields: [booksTable.buyerUserID],
     references: [usersTable.ID],
@@ -81,4 +77,5 @@ export type SelectCartItems = typeof cartItemsTable.$inferSelect;
 
 export type InsertBooks = typeof booksTable.$inferInsert;
 export type SelectBooks = typeof booksTable.$inferSelect;
-export type SelectBooksAll = SelectBooks & { seller: SelectUsers } & { isLiked: SelectLikes };
+export type SelectBooksAll = SelectBooks & { seller: SelectUsers };
+export type SelectBooksAllWithLikes = SelectBooks & { seller: SelectUsers } & { isLiked: boolean; };

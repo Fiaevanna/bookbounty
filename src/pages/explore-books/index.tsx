@@ -6,18 +6,19 @@ import Image from "next/image";
 import InputField from "@/components/InputField";
 import { Search } from "lucide-react";
 import BookLayout from "@/components/BookLayout";
-import { SelectBooksAll } from "@/db/schema";
+import { SelectBooksAllWithLikes } from "@/db/schema";
 import { getBooks } from "@/db/booksQueries";
+import { NextRequest } from "next/server";
+import { getAuth } from "@clerk/nextjs/server";
 
 type Props = {
-  dbBooks: SelectBooksAll[];
+  dbBooks: SelectBooksAllWithLikes[];
 };
 
 const ExploreBooks = ({ dbBooks }: Props) => {
   const [books, setBooks] = useState(dbBooks);
   const [search, setSearch] = useState("");
 
-  console.log(dbBooks)
 
   return (
     <>
@@ -37,6 +38,7 @@ const ExploreBooks = ({ dbBooks }: Props) => {
         <div className={styles.wrapperBookTextContent}>
           {books
             .filter((book) => {
+              // Filter funktion för sök, som uppdaterar böckerna man ser baserat på author eller titel och search input
               return search.toLocaleLowerCase() === ""
                 ? book
                 : book.title.toLocaleLowerCase().includes(search) ||
@@ -67,8 +69,9 @@ export default ExploreBooks;
 
 /* Här har jag min backend del, som hämtar alla böcker som inte är sålda och även hämtar användar id */
 
-export const getServerSideProps = async () => {
-  const books = await getBooks(false);
+export const getServerSideProps = async ({ req }: { req: NextRequest }) => {
+  const { userId } = getAuth(req);
+  const books = await getBooks(false, userId);
   return {
     props: {
       dbBooks: books,

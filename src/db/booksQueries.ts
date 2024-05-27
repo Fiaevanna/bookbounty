@@ -1,15 +1,44 @@
-import { eq } from "drizzle-orm";
+import { eq, and, or } from "drizzle-orm";
 import { db } from "@/db/db";
-import { booksTable, SelectBooksAll } from "@/db/schema";
+import { booksTable, likesTable, usersTable } from "@/db/schema";
 /* getBooks */
-export const getBooks = async (isSold: boolean) => {
+export const getBooks = async (isSold: boolean, userId?: string | null) => {
   // Kod för att hämta böcker som är inte sålda med drizzle
-  const res = await db.query.booksTable.findMany({
-    with: { seller: true, isLiked: true },
+  let books = await db.query.booksTable.findMany({
+    with: { seller: true },
     where: eq(booksTable.isSold, isSold),
   });
 
-  return res;
+  // Här loppar jag igenom varje book för att se om den nuvarande användare har likat boken
+  // OM vi har en användar id
+  // OM vi inte har användare får vi tillbaka böckerna som de är i den sista return
+  if (userId) {
+    const likes = await db.query.likesTable.findMany({
+      where: or(
+        ...books.map((book) =>
+          and(eq(likesTable.bookID, book.ID), eq(likesTable.userID, userId))
+        )
+      ),
+    });
+    
+    books = books.map(book => {
+      const likeForBook = likes.find((like) => like.bookID === book.ID)
+
+      if (likeForBook) {
+        return {
+          ...book,
+          isLiked: true,
+        }
+      }
+
+      return {
+        ...book,
+        isLiked: false
+      }
+    })
+  }
+
+  return books;
 };
 
 export const getBook = async (ID: number) => {
@@ -20,7 +49,6 @@ export const getBook = async (ID: number) => {
   });
   return res;
 };
-
 
 /* // BOOKS
 addBookForSale

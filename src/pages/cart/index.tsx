@@ -6,6 +6,8 @@ import Button from "@/components/Button";
 import { getBooks } from "@/db/booksQueries";
 import { useState } from "react";
 import { SelectBooksAll } from "@/db/schema";
+import { NextRequest } from "next/server";
+import { getAuth } from "@clerk/nextjs/server";
 
 /* Här ska hantering av trash can hanteras  */
 
@@ -76,8 +78,9 @@ export default Cart;
 https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props
 */
 
-export const getServerSideProps = async () => {
-  const books = await getBooks(false);
+export const getServerSideProps = async ({ req }: { req: NextRequest }) => {
+  const { userId } = getAuth(req);
+  const books = await getBooks(false, userId);
   const shipping = 49.0;
 
   const calcTotalSum = () => {
